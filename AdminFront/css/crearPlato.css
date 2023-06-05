@@ -1,0 +1,22 @@
+#form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  form {
+    max-width: 800px;
+    padding: 90px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow:  8px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid  green;
+    text-align: left;
+  }
+
+  form label{
+    font-weight: bold;
+    padding: 2%;
+    margin: 2%;
+  }

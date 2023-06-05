@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/crearPlato.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Contenido de la columna izquierda -->
+    </div>
+    
+    <div class="cards-container">
+            
+        <div id="form-container">
+           
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                  <input type="text" name="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="input-group mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Precio</label>
+                    <span class="input-group-text">$</span>
+                    <input type="text" name="precio" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  </div>
+                  
+                <button type="submit" class="btn btn-primary">cargar</button>
+              </form>
+
+        </div>
+
+
+    </div>
+
+    <script src="../js/services/postPlatillo.js" type="module"></script>
+</body>
+</html>

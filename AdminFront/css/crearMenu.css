@@ -1,0 +1,53 @@
+#form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    margin: 30px;
+    width: 60%;
+    height: 60%;;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow:  8px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid  gray;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  form label{
+    font-weight: bold;
+    padding: 2%;
+    margin: 2%;
+  }
+
+  .contenedor-opcion{
+    display: inline-flex;
+  }
+
+  .input-group{
+    width: 100%;
+  }
+
+
+  .fechas{
+        width: 100%;
+        float: left;
+        align-items: flex-start;
+        text-align: start;
+  }
+
+  .fechas input{
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 1%;
+    display: block;
+  }
+
+
+  .fechas button{
+    width: 30%;
+    display: block;
+  }
