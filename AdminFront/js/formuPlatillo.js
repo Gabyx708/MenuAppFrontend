@@ -1,7 +1,4 @@
-import config from "../../config/config.js";
-
-const api = config.apiUrl;
-const enpointPlatillo = `${api}/api/Platillo`;
+import { Platillo } from "./services/platillo.js";
 
 // Agregar un evento de escucha al formulario para manejar el envío
 const platilloForm = document.querySelector('form');
@@ -19,7 +16,7 @@ const platilloRequest = {
 };
 
 try {
-    const responseData = await crearPlatillo(platilloRequest);
+    const responseData = await Platillo.Post(platilloRequest)
     // Procesar la respuesta aquí  
     if(responseData.ok){
       console.log(responseData);
@@ -29,21 +26,3 @@ try {
     console.error('Error:', error);
   }
 });
-
-
-const crearPlatillo = async (platilloRequest) =>{
-
-    const response = await fetch(enpointPlatillo, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(platilloRequest),
-      });
-  
-      if (!response.ok) {
-        throw new Error();
-      }
-  
-      return response;
-};

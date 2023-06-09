@@ -1,11 +1,12 @@
 #form-container {
     display: flex;
     justify-content: center;
+    margin: auto;
   }
 
   form {
     margin: 30px;
-    width: 60%;
+    width: 80%;
     height: 60%;;
     padding: 30px;
     background-color: #f8f9fa;
@@ -50,4 +51,9 @@
   .fechas button{
     width: 30%;
     display: block;
+  }
+
+  input[type=number]{
+   width: 100%;
+  
   }
