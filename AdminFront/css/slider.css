@@ -1,0 +1,9 @@
+.slidebar-app {
+    width: 300px;
+    height: 120vh;
+    background-color: #1D1E22;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+    color: white;
+}

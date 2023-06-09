@@ -21,7 +21,7 @@ const crearMenu = async (menuRequest) =>{
       if(response.ok){
         result = await response.json();
       }
-
+      
       return result; 
 };
 

@@ -2,6 +2,7 @@ import config from "../../config/config.js";
 
 const api = config.apiUrl;
 const enpointLogin = `${api}/api/Personal/login`;
+let userData = null;
 
 // Agregar un evento de escucha al formulario para manejar el envío
 const loginForm = document.querySelector('form');
@@ -40,6 +41,10 @@ const loguearse = async (loginRequest) => {
 
     if (!response.ok) {
       throw new Error();
+    }
+
+    if(response.ok){
+      userData = await response.json();
     }
 
     return response;
