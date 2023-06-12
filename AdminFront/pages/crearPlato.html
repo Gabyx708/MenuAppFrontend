@@ -22,24 +22,29 @@
         <div id="form-container">
            
             <form>
+                <div class="title-container">
+                    <h3>Agregar nuevo platillo</h3>
+                    <img src="../assets/icons/tray.png" alt=""><br>
+                </div>
                 <div class="mb-3">
+                    <hr>
                   <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-                  <input type="text" name="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" name="descripcion" class="form-control" placeholder="Ej milanesas..." id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="input-group mb-3">
                     <label for="exampleInputEmail1" class="form-label">Precio</label>
                     <span class="input-group-text">$</span>
-                    <input type="text" name="precio" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input type="text" name="precio" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="valor total (sin descuento)">
                   </div>
                   
-                <button type="submit" class="btn btn-primary">cargar</button>
+                <button type="submit" class="btn btn-success">cargar</button>
               </form>
 
         </div>
 
 
     </div>
-
+    <script src="../js/access.js"></script>
     <script src="../js/formuPlatillo.js" type="module"></script>
     <script src="../js/components/slideBar.js"></script>
 </body>

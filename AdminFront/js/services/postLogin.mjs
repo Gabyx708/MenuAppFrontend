@@ -45,6 +45,7 @@ const loguearse = async (loginRequest) => {
 
     if(response.ok){
       userData = await response.json();
+      sessionStorage.setItem("user", JSON.stringify(userData));
     }
 
     return response;
