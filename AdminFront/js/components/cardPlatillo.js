@@ -1,9 +1,12 @@
 export default function cardPlatillo(platilloData){
 
-    return `<h2>Se agrego un nuevo platillo</h2>
+    return `
+    <div class="card-plato">
+    <h2>Se agrego un nuevo platillo</h2>
     <hr>
-    <h3>codigo interno: ${platilloData.id}</h3>
-    <h3>descripcion: ${platilloData.descripcion}</h3>
-    <h3>precio: $${platilloData.precio}</h3>
-    <h4>habilitado: ${platilloData.activado}</h4>`;
+    <h4>codigo interno:</h4> <p>${platilloData.id}</p>
+    <h4>descripcion:</h4> <p>${platilloData.descripcion}</p>
+    <h4>precio:</h4> <p>$${platilloData.precio}</p>
+    <h4>habilitado:</h4> <p>${platilloData.activado}</p>
+    </div>`
 }

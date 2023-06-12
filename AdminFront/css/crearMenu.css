@@ -15,13 +15,25 @@
     border: 2px solid  gray;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    grid-template-columns: repeat(1,1fr);
   }
 
   form label{
     font-weight: bold;
     padding: 2%;
     margin: 2%;
+  }
+
+  .header-form{
+    width: 100%;
+    display: flex;
+    text-align: center;
+  }
+
+  .header-form img{
+    width: 50px;
+    margin-left: 20px;
   }
 
   .contenedor-opcion{
@@ -34,15 +46,13 @@
 
 
   .fechas{
-        width: 100%;
-        float: left;
-        align-items: flex-start;
         text-align: start;
+        display: inline-flex;
   }
 
   .fechas input{
     margin-bottom: 20px;
-    width: 100%;
+    width: 50%;
     padding: 1%;
     display: block;
   }

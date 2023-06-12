@@ -16,7 +16,15 @@ platilloForm.addEventListener("submit", async (event) => {
 
   if (descripcion === "") {
     alert("falta la descripcion del platillo");
-  } else {
+  }
+  if(precio < 100){
+    alert("el precio debe ser mayor a $100");
+  }
+  if(precio > 5000){
+    alert("el precio debe ser menor a $5000");
+  }
+
+  else {
     try {
       const responseData = await Platillo.Post(platilloRequest);
       // Procesar la respuesta aquí
