@@ -1,9 +1,11 @@
 import config from "../../config/config.js";
 
 const api = config.apiUrl;
-const enpointPlatillo = `${api}/api/Platillo`;
+let enpointPlatillo = `${api}/api/Platillo`;
 
 const crearPlatillo = async (platilloRequest) =>{
+
+  let result = [];
 
     const response = await fetch(enpointPlatillo, {
         method: "POST",
@@ -16,15 +18,24 @@ const crearPlatillo = async (platilloRequest) =>{
       if (!response.ok) {
         throw new Error();
       }
+
+      if(response.ok){
+        result.response =  response;
+        result.data = await response.json();
+      }
   
-      return response;
+      return result;
 };
 
-const getPlatillo = async ()=>{
+const getPlatillo = async (id)=>{
 
     let result = [];
 
-    let response = await fetch(enpointPlatillo);
+    if(id != null){
+      enpointPlatillo =  enpointPlatillo+"/"+id;
+    }
+
+    const response = await fetch(enpointPlatillo);
     
       if (!response.ok) {
         throw new Error();
