@@ -1,5 +1,6 @@
 import { Platillo } from "./services/platillo.js";
 import {Menu} from "./services/menu.js";
+import cardMenu from "./components/cardMenu.js"
 
 
 let $selects = [];
@@ -9,6 +10,7 @@ let btnCrearMenu = document.getElementsByTagName("button")[0];
 
 $selects = document.getElementsByClassName('opciones-select');
 $stock = document.getElementsByName('stock');
+const formularioContainer = document.getElementById("form-container");
 
 for (let i = 0; i < $selects.length; i++) {
     agregarOciones($selects[i]);
@@ -60,9 +62,8 @@ function crearMenu(){
 
     Menu.Post(menuRequest)
     .then(resultado => {
-        console.log(resultado);
         alert("se ah creado el menu!: "+resultado.id);
-        location.reload();
+        formularioContainer.innerHTML = cardMenu(resultado);
     })
     
 }

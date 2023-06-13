@@ -46,24 +46,14 @@
 
 
   .fechas{
+        width: 100%;
         text-align: start;
-        display: inline-flex;
+        display: flex;
+        align-items: center;
+        margin: auto;
   }
 
   .fechas input{
-    margin-bottom: 20px;
-    width: 50%;
-    padding: 1%;
-    display: block;
-  }
-
-
-  .fechas button{
-    width: 30%;
-    display: block;
-  }
-
-  input[type=number]{
-   width: 100%;
-  
+    padding: 2%;
+    margin: 20px;
   }
