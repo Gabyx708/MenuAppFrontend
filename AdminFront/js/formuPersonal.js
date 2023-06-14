@@ -1,6 +1,8 @@
 import { Personal } from "./services/personal.js";
+import cardPersonal from "./components/cardPersonal.js";
 
 const button = document.getElementById("enviar-datos");
+const formContainer = document.getElementById("form-container");
 
 
 
@@ -61,5 +63,6 @@ function agregarPersonal(personalRequest){
     .then(resultado => {
         console.log(resultado);
         alert("se ah creado el usuario: "+resultado.id);
+        formContainer.innerHTML = cardPersonal(resultado);
     })
 };
