@@ -1,9 +1,37 @@
 .slidebar-app {
     width: 300px;
     height: 120vh;
-    background-color: #1D1E22;
-    padding: 20px;
+    background-color: var(--color-slider);
     box-sizing: border-box;
     float: left;
     color: white;
 }
+
+.slidebar-app h2{
+    padding: 5%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.vertical-menu {
+    width: 100%;
+  }
+  
+  .vertical-menu a {
+    background-color: var(--color-slider);
+    color: white; 
+    display: block; 
+    padding: 12px; 
+    text-decoration: none; 
+  }
+
+  .vertical-menu a img{
+    margin-right: 10px;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: var(--color-slider-claro);
+  }
+  
+

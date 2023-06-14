@@ -57,3 +57,25 @@
     padding: 2%;
     margin: 20px;
   }
+
+
+  .info-container{
+    display: grid;
+    margin-bottom: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .label-menu{
+    border-radius: 10px;
+    padding: 2%;
+    margin: 5px;
+    font-weight: bolder;
+  }
+
+  tbody{
+    text-align: left;
+  }
+
+  table{
+    border: 5px solid #000;
+  }

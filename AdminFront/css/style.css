@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --color-slider : #1D1E22;
+    --color-slider-claro : #44464E;
+}

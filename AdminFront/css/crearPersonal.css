@@ -38,6 +38,15 @@
     border-radius: 5px;
   }
 
+  .title-container{
+    display: flex;
+    align-items: center;
+  }
+  .title-container img{
+    width: 50px;
+    margin-left: 20px;
+  }
+
   .container-nombres , 
   .container-fechas,
   .container-privi{
