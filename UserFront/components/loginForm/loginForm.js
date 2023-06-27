@@ -53,6 +53,6 @@ function logicarFormulario() {
 };
 
 
-window.onload = () =>{
-    getLoginForm();
-};
+export const FormLogin = {
+    formularioLogin : getLoginForm
+}
