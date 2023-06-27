@@ -1,0 +1,38 @@
+header{
+
+    background-color: #44464E;
+}
+
+.header-container{
+    color: white;
+    width: 50%;
+    padding: 1%;
+    margin: auto;
+    text-align: center;
+}
+
+.header-container ul{
+    display: inline-flex;
+    list-style: none;
+}
+
+.header-container ul li{
+    padding: 1%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-container ul li a{
+    display: inline-flex;
+    text-decoration: none;
+    color: white;
+}
+
+.header-container ul li a:hover{
+   color: blue;
+}
+
+.header-container ul li a img{
+    margin-left: 5px;
+    margin-right: 5px;
+}
