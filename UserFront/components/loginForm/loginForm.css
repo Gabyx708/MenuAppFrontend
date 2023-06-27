@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+}
+
+#form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    max-width: 800px;
+    padding: 90px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
