@@ -1,12 +1,17 @@
 import config from "../../config/config.js";
+import formatoFecha from "../../utils/formatoFecha.js";
 
 const enpointMenuFecha =  `${config.apiUrl}/api/Menu/fecha`;
 
 const conseguirSiguienteMenu = async () => {
 
-    let fecha = "2023-06-27T00:00:00";
-
-    const response = await fetch(enpointMenuFecha+"/"+fecha);
+    let result = null;
+    let hoy = new Date();
+    let manana = hoy.getDate()+1;
+    
+    let fecha = new Date(hoy.getFullYear(),hoy.getMonth(),manana);
+    
+    const response = await fetch(enpointMenuFecha+"/"+formatoFecha(fecha));
     
     if (!response.ok) {
       throw new Error();
@@ -21,5 +26,5 @@ const conseguirSiguienteMenu = async () => {
 
 
 export const Menu = {
-    GetFecha : conseguirSiguienteMenu
+    GetSiguiente : conseguirSiguienteMenu
 }

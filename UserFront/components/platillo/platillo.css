@@ -1,0 +1,21 @@
+.platillo-container{
+    border: 2px solid rgb(15, 161, 142);
+    color: rgb(15, 161, 142);
+    width: 100%;
+    padding: 1%;
+    border-radius: 10px;
+    text-align:  center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
+}
+
+.platillo-container:hover{  
+    scale: 1.1;
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+.black{
+    color: black;
+}

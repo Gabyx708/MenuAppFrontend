@@ -1,0 +1,18 @@
+#menu-opciones-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 7%;
+    padding: 5%;
+}
+
+#menu_info{
+    color: rgb(15, 161, 142);
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 20px;
+}
+
+#menu_info h4{
+    font-size: 13pt
+}
