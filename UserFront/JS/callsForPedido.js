@@ -10,7 +10,7 @@ MenuComponent.menuComponente();
 let opciones = Array.from(document.getElementsByClassName("platillo-body"));
 
 opciones.forEach(opcion => {
-    opcion.addEventListener("click", () => {
+    opcion.addEventListener("click",async () => {
         
         let idMenuPlatillo = opcion.getAttribute("idMenuPlatillo");
         
@@ -23,8 +23,11 @@ opciones.forEach(opcion => {
                 menuPlatillos : [idMenuPlatillo]
             }
 
-            let respuesto =  Pedido.hacerUnPedido(requestPedido);
-            console.log(respuesto);
+            let respuestaPedido =  await Pedido.hacerUnPedido(requestPedido);
+            let objetoPedido = await respuestaPedido;
+
+            await sessionStorage.setItem("pedido",JSON.stringify(objetoPedido))
+            location.href = "/pages/recibo.html"
         }
     });
 });

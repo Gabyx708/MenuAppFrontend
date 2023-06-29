@@ -1,0 +1,41 @@
+#recibo{
+    padding: 2%;
+    border-radius: 10px;
+    border: 2px solid rgb(15, 161, 142);;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.resumen{
+    display: flex;
+    width: 50%;
+    margin-top: 20px;
+}
+#recibo .descuento{
+    background-color: rgb(15, 161, 142);
+    padding: 2%;
+    width: 50%;
+}
+
+#recibo .total{
+    border: 3px solid rgb(15, 161, 142);
+    padding: 2%;
+    width: 50%;
+}
+
+table, th, td {
+    border: 2px solid  rgb(15, 161, 142);
+}
+
+
+table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  thead{
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(15, 161, 142);;
+  }
