@@ -3,7 +3,7 @@ export default async function reciboComponete(pedidoResponse) {
     let pedidoResponseObject = await JSON.parse(pedidoResponse);
     const  platillosLista  = pedidoResponseObject.platillos;
     
-    let total = (pedidoResponseObject.recibo.descuento / 100) * pedidoResponseObject.recibo.precio;
+    let total = pedidoResponseObject.recibo.precio - (pedidoResponseObject.recibo.descuento / 100* pedidoResponseObject.recibo.precio);
    
     // Generar filas de la tabla dinámicamente
     const itemsTabla = platillosLista.map((platillo) => `
@@ -29,7 +29,7 @@ export default async function reciboComponete(pedidoResponse) {
   
       <div class="resumen">
         <h4 class="descuento">Descuento: ${pedidoResponseObject.recibo.descuento}%</h4>
-        <h4 class="total">Total: ${total}</h4>
+        <h4 class="total">Total: $${total}</h4>
       </div>
     </div>`;
   }
