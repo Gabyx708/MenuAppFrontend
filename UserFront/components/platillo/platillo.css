@@ -19,3 +19,13 @@
 .black{
     color: black;
 }
+
+.desactivo{
+    filter: grayscale(1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.desactivo:hover{
+    scale: 1;
+    pointer-events: none;
+}

@@ -36,6 +36,10 @@ function logicarFormulario() {
         try {
             const responseData = await Login.Loguerse(loginRequest)
 
+            if(responseData.status == 401){
+                    alert("usuario y/o contraseña incorrecto");
+            };
+
             if (responseData.ok) {
 
                 console.log(responseData);
@@ -44,6 +48,7 @@ function logicarFormulario() {
 
         } catch (error) {
             console.error('Error:', error);
+            console.log(responseData);
         }
 
 

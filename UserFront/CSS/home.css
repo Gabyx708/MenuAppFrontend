@@ -27,3 +27,14 @@ h1{
     margin-top: 20px;
     text-align: center;
 }
+
+
+@media(max-width: 767px){
+    .cards-container{
+     grid-template-columns: 1fr;
+  }
+
+  .menu-header{
+    display: none;
+  }
+  }

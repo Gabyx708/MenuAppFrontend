@@ -13,7 +13,7 @@ async function getHeader(){
     let bienvenidoMensaje = document.getElementById("nombre-usuario");
     let usuario = JSON.parse(sessionStorage.getItem("user"));
 
-    bienvenidoMensaje.textContent =  `!Bienvenid@ ${usuario.nombre}¡`;
+    bienvenidoMensaje.textContent =  `Bienvenid@ ${usuario.nombre}`;
 
     let btnCerrarSesion = document.getElementById("cerrar-sesion");
 

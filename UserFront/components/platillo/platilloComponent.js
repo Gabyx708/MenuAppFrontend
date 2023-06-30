@@ -1,6 +1,6 @@
 export default function platilloComponente(platilloData){
 
-    return `<div class="platillo-container">
+    return `<div class="platillo-container" quedan=${platilloData.stock - platilloData.pedido}>
     <div class="platillo-body" idMenuPlatillo=${platilloData.idMenuPlato}>
         <h2>${platilloData.stock - platilloData.pedido}</h2>
         <h3>DISPONIBLES</h3>

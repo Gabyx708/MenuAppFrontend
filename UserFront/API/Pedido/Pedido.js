@@ -21,7 +21,7 @@ const hacerUnPedido = async (pedidoRequest) => {
         let pedidoResponse = await response.json();
         return pedidoResponse;
       }
-  
+
       return response;
 };
 

@@ -1,12 +1,12 @@
 header{
 
-    background-color: #44464E;
+    background-color: var(--color-header);
 }
 
 .header-container{
     color: white;
-    width: 50%;
-    padding: 1%;
+    width: 100%;
+    padding: 2.5%;
     margin: auto;
     text-align: center;
 }
@@ -14,25 +14,47 @@ header{
 .header-container ul{
     display: inline-flex;
     list-style: none;
+    align-items: center;
+    margin: 0px auto;
 }
 
 .header-container ul li{
-    padding: 1%;
+    padding: 2%;
     margin-left: 10px;
     margin-right: 10px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.5s;
+
 }
 
 .header-container ul li a{
     display: inline-flex;
     text-decoration: none;
     color: white;
+    align-items: center;
 }
 
-.header-container ul li a:hover{
-   color: blue;
+.header-container ul li:hover{
+    scale: 1.2;
 }
 
 .header-container ul li a img{
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.menu-header{
+    width: 100%;
+    padding: 1%;
+}
+
+
+header hr{
+    border: none;
+    width: 70%;
+    margin: auto;
+    height: 5px;
+    background-color: #000;  /* Modern Browsers */
+    border-radius: 2px;
 }

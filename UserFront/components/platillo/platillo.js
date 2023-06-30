@@ -12,6 +12,21 @@ async function pintarOpciones() {
 
     listaPlatillos.forEach(opcion => {
         menuContainer.innerHTML += platilloComponente(opcion)
+        
+
+        let opcionesDiv = document.getElementsByClassName("platillo-container");
+        
+        let opcionesDivLista = Array.from(opcionesDiv);
+        
+        opcionesDivLista.forEach(div => {
+            let cantidad = div.getAttribute("quedan");
+            
+            if(cantidad == 0){
+                    div.classList.add("desactivo");
+
+            }
+            console.log(cantidad)
+        })
     });
 
 }

@@ -7,8 +7,17 @@
 :root {
     --color-slider: #1D1E22;
     --color-slider-claro: #44464E;
+    --color-acento: #0A1535;
+    --color-header: #51b7aa;
+    --color-body: #e5e5e5;
+    --color-footer: #1e343d96;
 }
 
 body {
-    background-color: #e9e9e9;
+    background-color: var(--color-body);
 }
+
+html {
+    min-height: 100%;
+    position: relative;
+  }

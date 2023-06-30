@@ -13,7 +13,7 @@ const loguearUsuario = async (UsuarioLoginRequest) => {
       });
   
       if (!response.ok) {
-        throw new Error();
+        return response;
       }
   
       if(response.ok){
