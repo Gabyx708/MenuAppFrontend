@@ -1,0 +1,15 @@
+.ultimos_container{
+    padding: 2%;
+}
+
+.ultimos_pedidos{
+    padding: 2%;
+    border-radius: 20px;
+    border: 3px solid var(--color-acento);
+    background-color: white;
+}
+
+.ultimos_pedidos hr{
+    height: 5px;
+    background-color: black;
+}

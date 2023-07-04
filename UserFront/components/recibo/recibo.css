@@ -39,3 +39,30 @@ table{
     text-align: center;
     background-color: rgb(15, 161, 142);;
   }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    
+    #recibo-container{
+        padding: 2%;
+        margin: auto;
+        font-size: 10pt;
+    }
+
+    #menu-opciones-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 7%;
+        padding: 5%;
+        margin-bottom: 200px;
+    }
+
+    #recibo .descuento{
+        width: 100%;
+    }
+    
+    #recibo .total{
+        width: 100%;
+    }
+
+  }

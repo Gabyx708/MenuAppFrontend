@@ -1,7 +1,10 @@
+import formatoFechaEscrita from "../../utils/formatoFechaEscrita.js";
+
 export default async function reciboComponete(pedidoResponse) {
 
     let pedidoResponseObject = await JSON.parse(pedidoResponse);
     const  platillosLista  = pedidoResponseObject.platillos;
+    let fecha = new Date(pedidoResponseObject.fecha);
     
     let total = pedidoResponseObject.recibo.precio - (pedidoResponseObject.recibo.descuento / 100* pedidoResponseObject.recibo.precio);
    
@@ -14,9 +17,12 @@ export default async function reciboComponete(pedidoResponse) {
     `).join('');
   
     return `<div id="recibo">
-      <h3>Recibo: N° ${pedidoResponseObject.recibo.id}</h3>
-      <h4>PARA: ${pedidoResponseObject.nombre}</h4>
-  
+      <h4>Recibo: N° ${(pedidoResponseObject.recibo.id).toUpperCase()}</h4>
+      <hr>
+      <h6>Pedido: N° ${(pedidoResponseObject.idPedido).toUpperCase()}</h6>
+      <p>fecha de pedido: ${(formatoFechaEscrita(fecha,true)).toLowerCase()}</p>
+      <p>pedido por: ${pedidoResponseObject.nombre}</p>
+      <hr>
       <table>
         <thead>
           <tr>

@@ -3,7 +3,7 @@
  align-items: center;
  align-content: center;
  display: grid;
- width: 50%;
+ width: 70%;
  padding: 5%;
  grid-template-columns: repeat(2,1fr);
  gap: 50px;

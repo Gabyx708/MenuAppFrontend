@@ -25,7 +25,46 @@ const hacerUnPedido = async (pedidoRequest) => {
       return response;
 };
 
+const conseguirUltimo = async (idUsuario) => {
+
+    let enpoint = `${enpointPedido}?idPersonal=${idUsuario}&cantidad?=${10}`;
+    let result;
+    const response = await fetch(enpoint);
+    
+    if (!response.ok) {
+      throw new Error();
+    }
+
+    if(response.ok){
+      result = await response.json();
+    }
+
+    return result;
+
+}
+
+const conseguirPedido = async (idPedido) => {
+
+  let enpoint = enpointPedido+"/"+idPedido;
+  let result;
+  const response = await fetch(enpoint);
+  
+  if (!response.ok) {
+    throw new Error();
+  }
+
+  if(response.ok){
+    result = await response.json();
+  }
+
+  return result;
+
+
+}
+
 export const Pedido = {
 
-    hacerUnPedido : hacerUnPedido
+    hacerUnPedido : hacerUnPedido,
+    ultimosPedidos : conseguirUltimo,
+    GetById : conseguirPedido
 }
