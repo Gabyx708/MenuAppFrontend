@@ -1,7 +1,8 @@
 #recibo{
     padding: 2%;
     border-radius: 10px;
-    border: 2px solid rgb(15, 161, 142);;
+    border: 5px solid var(--color-header);
+    box-shadow: 0px 0px 36px 24px rgba(216, 216, 233, 0.57);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -11,19 +12,19 @@
     margin-top: 20px;
 }
 #recibo .descuento{
-    background-color: rgb(15, 161, 142);
+    background-color: var(--color-header);
     padding: 2%;
     width: 50%;
 }
 
 #recibo .total{
-    border: 3px solid rgb(15, 161, 142);
+    border: 3px solid var(--color-header);
     padding: 2%;
     width: 50%;
 }
 
 table, th, td {
-    border: 2px solid  rgb(15, 161, 142);
+    border: 2px solid  var(--color-header);
 }
 
 
@@ -37,7 +38,7 @@ table{
   thead{
     font-weight: bold;
     text-align: center;
-    background-color: rgb(15, 161, 142);;
+    background-color:var(--color-header);
   }
 
   @media only screen and (max-width: 768px) {

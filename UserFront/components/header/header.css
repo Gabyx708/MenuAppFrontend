@@ -6,25 +6,19 @@ header{
 .header-container{
     color: white;
     width: 100%;
-    padding: 2.5%;
     margin: auto;
     text-align: center;
 }
 
 .header-container ul{
-    display: inline-flex;
+    display: flex;
     list-style: none;
-    align-items: center;
-    margin: 0px auto;
+    justify-content: center;
 }
 
 .header-container ul li{
     padding: 2%;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: black;
-    border-radius: 3px;
-    transition: all 0.5s;
+    transition: all 0.3s;
 
 }
 
@@ -36,7 +30,7 @@ header{
 }
 
 .header-container ul li:hover{
-    scale: 1.2;
+    background-color: #0f3d5f;
 }
 
 .header-container ul li a img{
@@ -46,7 +40,8 @@ header{
 
 .menu-header{
     width: 100%;
-    padding: 1%;
+    padding: 0%;
+    background-color: var(--color-nav);
 }
 
 
@@ -57,4 +52,8 @@ header hr{
     height: 5px;
     background-color: #000;  /* Modern Browsers */
     border-radius: 2px;
+}
+
+#nombre-usuario{
+    padding: 1rem;
 }

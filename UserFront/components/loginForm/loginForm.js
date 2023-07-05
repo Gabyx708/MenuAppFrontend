@@ -37,7 +37,13 @@ function logicarFormulario() {
             const responseData = await Login.Loguerse(loginRequest)
 
             if(responseData.status == 401){
-                    alert("usuario y/o contraseña incorrecto");
+
+                Swal.fire(
+                    'usuario y/o contraseña incorrecta',
+                    'revisa bien estos datos',
+                    'question'
+                  )
+
             };
 
             if (responseData.ok) {

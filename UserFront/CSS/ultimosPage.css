@@ -1,5 +1,6 @@
 .ultimos_container{
-    padding: 2%;
+    padding: 5%;
+    color: var(--color-acento);
 }
 
 .ultimos_pedidos{

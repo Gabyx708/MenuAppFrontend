@@ -17,11 +17,14 @@ async function getHeader(){
 
     let btnCerrarSesion = document.getElementById("cerrar-sesion");
 
-    btnCerrarSesion.addEventListener("click",()=>{
+    btnCerrarSesion.addEventListener("click",(e)=>{
+
+        e.preventDefault();
         let opcion = confirm("cerrar sesion?");
 
         if(opcion == true){
                 cerrarSesion();
+                location.href = "../index.html"
         }
     })
     

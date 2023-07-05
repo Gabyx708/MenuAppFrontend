@@ -1,4 +1,5 @@
 .pedido_item{
+    color: black;
     margin: 5px;
     padding: 1%;
     width: 100%;
@@ -9,6 +10,7 @@
 }
 
 .pedido_item button{
+    background-color:var(--color-header);
     cursor: pointer;
     padding: 0.8%;
     font-weight: bold;
@@ -16,6 +18,13 @@
     box-shadow: none;
     border: none;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s;
+}
+
+.pedido_item button:hover{
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 2px 2px rgba(0, 0, 0, 1);
 }
 
 .pedido{

@@ -27,7 +27,7 @@ const hacerUnPedido = async (pedidoRequest) => {
 
 const conseguirUltimo = async (idUsuario) => {
 
-    let enpoint = `${enpointPedido}?idPersonal=${idUsuario}&cantidad=${10}`;
+    let enpoint = `${enpointPedido}?idPersonal=${idUsuario}&cantidad=${7}`;
     let result;
     const response = await fetch(enpoint);
     
