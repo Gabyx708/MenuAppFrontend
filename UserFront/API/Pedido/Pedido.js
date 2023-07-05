@@ -13,9 +13,14 @@ const hacerUnPedido = async (pedidoRequest) => {
       });
   
 
+      if(response.status == 409){
+          return response;
+      }
+
       if (!response.ok) {
         throw new Error();
       }
+
   
       if(response.ok){
         let pedidoResponse = await response.json();

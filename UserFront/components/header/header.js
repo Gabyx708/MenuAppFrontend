@@ -20,13 +20,25 @@ async function getHeader(){
     btnCerrarSesion.addEventListener("click",(e)=>{
 
         e.preventDefault();
-        let opcion = confirm("cerrar sesion?");
 
-        if(opcion == true){
+        Swal.fire({
+            title: 'cerrar sesion?',
+            text: "estas a punto de cerrar sesion",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'green',
+            cancelButtonColor: 'red',
+            confirmButtonText: 'confirmar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                
                 cerrarSesion();
                 location.href = "../index.html"
-        }
-    })
+
+            }
+          })
+
+    });
     
 };
 
