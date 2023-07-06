@@ -14,20 +14,19 @@ opciones.forEach(opcion => {
         
         let idMenuPlatillo = opcion.getAttribute("idMenuPlatillo");
     
-        Swal.fire({
-            title: 'confirmas tu pedido?',
+        const result = await Swal.fire({
+            title: '¿Confirmas tu pedido?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            cancelButtonText: "cancelar",
-            confirmButtonText: 'confirmar'
-          }).then((result) => {
-            if (result.isConfirmed) {
-                
-                hacerElPedido(idMenuPlatillo);
-            }
-          })
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Confirmar'
+          });
+        
+          if (result.isConfirmed) {
+            await hacerElPedido(idMenuPlatillo);
+          }
 
 
     });
@@ -52,18 +51,15 @@ const hacerElPedido = async (idMenuPlatillo) => {
             text: 'parece que ya has hecho un pedido hoy',
           })
 
-    }
+    }else{
+        let objetoPedido = await respuestaPedido;
 
-    if(respuestaPedido.status == 201){
-
-    let objetoPedido = await respuestaPedido;
-
-    await sessionStorage.setItem("pedido",JSON.stringify(objetoPedido))
-    location.href = "/pages/recibo.html"
-
+        await sessionStorage.setItem("pedido",JSON.stringify(objetoPedido))
+        location.href = "/pages/recibo.html"
     }
 
 }
+  
 
 
 

@@ -12,7 +12,7 @@ export default function formatoFechaEscrita(date,time) {
       ];
 
 
-    let dia = fecha.getDay() - 1;  
+    let dia = (fecha.getDay() - 1 + 7) % 7;
     let diaMes = fecha.getDate();
     let month = fecha.getMonth();
     let year = fecha.getFullYear()

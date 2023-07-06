@@ -13,12 +13,9 @@ const hacerUnPedido = async (pedidoRequest) => {
       });
   
 
-      if(response.status == 409){
-          return response;
-      }
 
       if (!response.ok) {
-        throw new Error();
+        return response;
       }
 
   
@@ -55,7 +52,7 @@ const conseguirPedido = async (idPedido) => {
   const response = await fetch(enpoint);
   
   if (!response.ok) {
-    throw new Error();
+    return response;
   }
 
   if(response.ok){
