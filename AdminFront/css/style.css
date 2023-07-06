@@ -1,10 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --color-slider : #1D1E22;
-    --color-slider-claro : #44464E;
+:root {
+    --color-slider: #1D1E22;
+    --color-slider-claro: #44464E;
+    --color-acento: #e3aa14;
+    --color-header: #0e88ec;
+    --color-body: #EFEFEF;
+    --color-footer: var(--color-header) /*#48586D*/;
+    --color-nav: none;
 }
+
+body {
+    background-color: var(--color-body);
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+  }
