@@ -1,7 +1,9 @@
 import { navBar } from "../components/navBar/navBar.js";
+import pedidoResumen from "../components/pedidoResume/pedidoResume.js";
 import cerrarSesion from "../utils/cerrarSesion.js";
 
-await navBar.getNavbar();
+await pedidoResumen.pintarPedidos();
+await navBar.getNavbar(); 
 
 const btnCerrarSesion = document.getElementById("cerrar-sesion");
 

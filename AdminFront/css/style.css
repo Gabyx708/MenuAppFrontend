@@ -16,9 +16,17 @@
 
 body {
     background-color: var(--color-body);
+   
 }
 
 html {
     min-height: 100%;
     position: relative;
   }
+
+  .container-principal{
+    width: 100vw;
+    height: 100vh;
+    padding: 2%;
+    position: absolute;
+}

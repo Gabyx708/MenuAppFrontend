@@ -2,6 +2,7 @@ import config from "../../config/config.js";
 import formatoFecha from "../../utils/formatoFecha.js";
 
 const enpointMenuFecha =  `${config.apiUrl}/api/Menu/fecha`;
+const enpointMenu = `${config.apiUrl}/api/Menu`;
 
 const conseguirSiguienteMenu = async () => {
 

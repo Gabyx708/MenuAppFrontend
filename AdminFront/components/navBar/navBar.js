@@ -1,6 +1,6 @@
 import { agregarEstilo } from "../../utils/agregarEstilos.js";
 
-const bodyHtml = document.getElementsByTagName("body")[0];
+const bodyHtml = document.getElementsByClassName("container-principal")[0];
 
 async function getNavBar(){
 

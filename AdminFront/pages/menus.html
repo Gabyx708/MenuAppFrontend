@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/menus.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <title>Menu</title>
+</head>
+
+<body>
+    
+    <div class="container-principal">
+
+        <div id="menu_container">
+
+            <div class="form_menu">
+            <form>
+                <div class="header-form">
+                  <h3>crear un nuevo menu</h3>
+                  <img src="/assets/images/bolsa.png" alt="">            
+                </div>
+                             
+                <hr> 
+                  <div class="column">
+
+                    <div class="fechas">
+                        <label for="">fecha consumo</label>
+                        <input type="date" class="date-menu" id="date_consumo">
+                        <label for="">fecha cierre</label>
+                        <input type="datetime-local" class="date-menu-venc" id="date_venc">
+                    </div>
+                    
+                      <div class="contenedor-opcion">
+                          <label for="">opcion</label>
+                          <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      
+                            </select>
+                          <div class="input-group mb-3">
+                              <label for="">stock</label>
+                              <input type="number" name="stock" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            </div>
+                      </div>
+          
+                      <div class="contenedor-opcion">
+                          <label for="">opcion</label>
+                          <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      
+                            </select>
+                          <div class="input-group mb-3">
+                              <label for="">stock</label>
+                              <input type="number" name="stock" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            </div>
+                      </div>
+          
+                      <div class="contenedor-opcion">
+                          <label for="">opcion</label>
+                          <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      
+                            </select>
+                          <div class="input-group mb-3">
+                              <label for="">stock</label>
+                              <input type="number" name="stock" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            </div>
+                          </div>             
+      
+                  </div>
+                  <hr>
+
+                            
+                <button type="submit" class="btn btn-success">cargar</button>
+                </form>
+            </div>
+
+        
+
+
+        <div class="ultimo_menu">
+
+            <form>
+                <div class="header-form">
+                  <h2>Ultimo menu cargado</h2>
+                  <img src="/assets/images/bolsa.png" alt="">            
+                </div>
+                             
+                <hr> 
+                  <div class="column">
+                      
+                    <div class="fechas">
+                        <label for="">fecha consumo</label>
+                        <input type="date" class="date-menu" id="date_consumo">
+                        <label for="">fecha cierre</label>
+                        <input type="datetime-local" class="date-menu-venc" id="date_venc">
+                    </div>
+
+                      <div class="contenedor-opcion">
+                          <label for="">opcion</label>
+                          <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      
+                            </select>
+                          <div class="input-group mb-3">
+                              <label for="">stock</label>
+                              <input type="number" name="stock" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            </div>
+                      </div>
+          
+                      <div class="contenedor-opcion">
+                          <label for="">opcion</label>
+                          <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      
+                            </select>
+                          <div class="input-group mb-3">
+                              <label for="">stock</label>
+                              <input type="number" name="stock" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            </div>
+                      </div>
+          
+                      <div class="contenedor-opcion">
+                          <label for="">opcion</label>
+                          <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      
+                            </select>
+                          <div class="input-group mb-3">
+                              <label for="">stock</label>
+                              <input type="number" name="stock" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            </div>
+                          </div>             
+      
+                  </div>
+                  <hr>
+                            
+                <button type="submit" class="btn btn-success">cargar</button>
+                </form>
+
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+<script type="module" src="/js/callForMenus.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.js"></script>
+</html>

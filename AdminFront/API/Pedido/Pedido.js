@@ -31,6 +31,11 @@ const conseguirUltimo = async (idUsuario) => {
 
     let enpoint = `${enpointPedido}?idPersonal=${idUsuario}&cantidad=${7}`;
     let result;
+
+    if(idUsuario == null){
+      enpoint = `${enpointPedido}?cantidad=${4}`;
+    }
+
     const response = await fetch(enpoint);
     
     if (!response.ok) {

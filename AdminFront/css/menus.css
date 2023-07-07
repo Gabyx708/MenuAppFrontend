@@ -1,0 +1,51 @@
+.container-principal{
+    background-color: var(--color-body);
+}
+
+#menu_container{
+   
+    background-color: none;
+    float: right;
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+/* generales de ambos bloques*/
+.form_menu{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.5) -5px 8px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ultimo_menu{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.5) -5px 8px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.header-form{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    color: black;
+  }
+
+  .header-form img{
+    width: 50px;
+    margin-left: 20px;
+  }
+
+  form{
+    color: var(--color-header);
+  }
+
+
+  /* estilos formulario de creacion*/
