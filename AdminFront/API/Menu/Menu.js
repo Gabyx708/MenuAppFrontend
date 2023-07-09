@@ -6,13 +6,7 @@ const enpointMenu = `${config.apiUrl}/api/Menu`;
 
 const conseguirSiguienteMenu = async () => {
 
-    let result = null;
-    let hoy = new Date();
-    let manana = hoy.getDate()+1;
-    
-    let fecha = new Date(hoy.getFullYear(),hoy.getMonth(),manana);
-    
-    const response = await fetch(enpointMenuFecha+"/"+formatoFecha(fecha));
+    const response = await fetch(enpointMenu);
     
     if (!response.ok) {
       throw new Error();
