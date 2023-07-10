@@ -1,10 +1,13 @@
 import { navBar } from "../components/navBar/navBar.js";
 import { Platillo } from "../API/Platillo/Platillo.js";
 import {Menu} from "../API/Menu/Menu.js"
+import formatoFecha from "../utils/formatoFecha.js";
+import formatoFechaEscrita from "../utils/formatoFechaEscrita.js";
 
 navBar.getNavbar();
 
 
+/*logica del formulario de creacion de menu*/
 let $selects = [];
 let $stock = [];
 let platillos = await Platillo.Get();
@@ -69,3 +72,35 @@ function crearMenu(){
     })
     
 }
+
+
+
+/*logica para mostrar el utlimo menu */
+
+let ultimoMenu = await Menu.GetSiguiente();
+
+
+let codigoMenu =  document.getElementById("codigo_menu");
+let fechaConsumir = document.getElementById("date_consumo_print");
+let fechaCarga = document.getElementById("date_carga_print");
+let fechaCierra = document.getElementById("date_venc_print");
+
+console.log(await ultimoMenu)
+
+fechaConsumir.innerText = formatoFechaEscrita(new Date(ultimoMenu.fecha_consumo));
+fechaCarga.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_carga));
+fechaCierra.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_cierre),true);
+codigoMenu.textContent = "ID: "+(ultimoMenu.id).toUpperCase();
+
+
+let opcionesMenu = document.getElementById("opciones_menu_dia");
+let platos = await Array.from(ultimoMenu.platillos);
+console.log(platos)
+
+platos.forEach(plato => {
+
+    let texto = document.createElement("p");
+    texto.textContent = plato.descripcion +"\n disponibles: "+plato.stock+"\npedidos: "+plato.pedido;
+    opcionesMenu.appendChild(texto);
+    console.log(plato)
+})

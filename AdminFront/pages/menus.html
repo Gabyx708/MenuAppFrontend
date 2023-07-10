@@ -79,71 +79,45 @@
         </form>
       </div>
 
-      <div class="form_menu">
+
+      <div class="form_menu info">
         <form>
           <div class="header-form">
-            <h3>ultimo menu</h3>
+            <h3>ultimo menu cargado</h3>
             <img src="/assets/images/bolsa.png" alt="">
           </div>
 
           <hr>
-
+          <br>
+          <h3  id="codigo_menu" class="text-black" style="text-align: center;">ID: </h3>
           <div class="column">
 
             <div class="fechas">
-              <div>
-                <label for="">FECHA CONSUMO</label>
-                <input type="date" class="date-menu" id="date_consumo">
+              <div class="fecha_d">
+                <label for="">FECHA CONSUMO:</label>
+                <p  class="date-menu text-black" id="date_consumo_print"></p>
               </div>
 
-              <div>
-                <label for="">FECHA CIERRE</label>
-                <input type="datetime-local" class="date-menu-venc" id="date_venc">
+              <div class="fecha_d">
+                <label for="">FECHA CREACION:</label>
+                <p class="date-menu text-black" id="date_carga_print"></p>
               </div>
+        
+            </div>
 
-              <div>
-                <label for="">FECHA CREACION</label>
-                <input type="datetime-local" class="date-menu-venc" id="date_venc">
-              </div>
+            <div class="fecha_d cierre">
+              <label for="">FECHA CIERRE:</label>
+              <p class="date-menu-venc text-black" id="date_venc_print"></p>
             </div>
             <hr>
           </div>
 
           <div class="column">
-            <h4>opciones del menu</h4>
+            <h4>platillos del menu</h4>
+            <div class="contenedor-opcion" id="opciones_menu_dia">
 
-            <div class="contenedor-opcion">
-              <p class="mb-3" aria-label=".form-select-lg example">Milanesas a la napolitana</p>
-              
-              <div class="input-group mb-3">
-                <input type="number" name="stock" placeholder=" cantidad de stock...">
-              </div>
-            </div>
-
-            <div class="contenedor-opcion">
-              <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-
-              </select>
-              <div class="input-group mb-3">
-                <input type="number" name="stock" placeholder=" cantidad de stock...">
-              </div>
-            </div>
-
-            <div class="contenedor-opcion">
-              <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-
-              </select>
-              <div class="input-group mb-3">
-                <input type="number" name="stock" placeholder=" cantidad de stock...">
-              </div>
-            </div>
 
           </div>
-
-          <hr>
-
-
-          <button type="submit" class="boton_carga">cargar</button>
         </form>
       </div>
 

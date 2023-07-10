@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
-    padding: 2%;
+    padding: 1%;
 
   }
   
@@ -86,8 +86,8 @@
   width: 255.78px;
 }
 .fechas{
-  margin: 20px;
-  font-size: 15pt;
+  margin: 10px;
+  font-size: 1Opt;
   text-align: center;
   font-weight: bold;
   display: inline-flex;
@@ -106,7 +106,7 @@ hr{
 .boton_carga{
   background-color: var(--color-header);
   font-weight: bold;
-  font-size: 17pt;
+  font-size: 15pt;
   padding: 3%;
   border-radius: 10px;
   color: white;
@@ -119,4 +119,17 @@ hr{
 .boton_carga:hover{
   background-color: white;
   color: var(--color-header);
+}
+
+
+/*---estilos de la tarjeta que muestra el menu---*/
+
+.fecha_d{
+  display: grid;
+  font-size: 15px;
+}
+
+.cierre{
+  width: 100%;
+  text-align: center;
 }

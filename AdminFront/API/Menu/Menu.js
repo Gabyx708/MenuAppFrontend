@@ -7,7 +7,7 @@ const enpointMenu = `${config.apiUrl}/api/Menu`;
 const conseguirSiguienteMenu = async () => {
 
     const response = await fetch(enpointMenu);
-    
+    let result;
     if (!response.ok) {
       throw new Error();
     }
