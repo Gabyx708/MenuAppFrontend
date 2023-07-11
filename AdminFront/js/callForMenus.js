@@ -100,7 +100,7 @@ console.log(platos)
 platos.forEach(plato => {
 
     let texto = document.createElement("p");
-    texto.textContent = plato.descripcion +"\n disponibles: "+plato.stock+"\npedidos: "+plato.pedido;
+    texto.textContent = plato.descripcion +"\n stock: "+plato.stock+"\npedidos: "+plato.pedido;
     opcionesMenu.appendChild(texto);
     console.log(plato)
 })
