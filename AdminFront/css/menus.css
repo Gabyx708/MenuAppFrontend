@@ -76,7 +76,6 @@
   }
 
 .date-menu-venc , .date-menu{
-  padding: 2%;
   height: 50px;
   border-radius: 10px;
   font-weight: bold;
@@ -133,3 +132,25 @@ hr{
   width: 100%;
   text-align: center;
 }
+
+#codigo_menu{
+  border-radius: 10px;
+  font-size: 17pt;
+  padding: 1%;
+  border: 2px solid var(--color-acento);
+}
+
+#opciones_menu_dia{
+  display: inline-block;
+  color: black;
+}
+
+.forma-redondeada{
+  padding: 0.2%;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  font-size: 13pt;
+  border: 2px solid var(--color-acento);
+}
+

@@ -20,27 +20,23 @@ const conseguirSiguienteMenu = async () => {
 };
 
 
-const crearMenu = async (menuRequest) =>{
-
-  let result;
+const crearMenu = async (menuRequest) => {
   const response = await fetch(enpointMenu, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(menuRequest),
-    });
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(menuRequest),
+  });
 
-    if (!response.ok) {
-      throw new Error();
-    }
+  const result = await response.json();
 
-    if(response.ok){
-      result = await response.json();
-    }
-    
-    return result; 
+  return {
+    response,
+    result
+  };
 };
+
 
 
 export const Menu = {

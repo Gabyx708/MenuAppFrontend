@@ -23,10 +23,32 @@ for (let i = 0; i < $selects.length; i++) {
 }
 
 
+/*logica del boton de crear menu */
 btnCrearMenu.addEventListener("click",(e) =>{
     e.preventDefault();
-    crearMenu()});
+  
+    Swal.fire({
+        title: 'estas seguro de cargar este menu?',
+        text: "esta operacion es irreversible",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'confirmar',
+        cancelButtonText: "cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+                crearMenu();
+        }
+      })
+  
+  
+     } );
 
+
+
+
+/*--funciones--- */
 function agregarOciones(select){
 
     platillos.forEach(plato => {
@@ -66,11 +88,26 @@ function crearMenu(){
 
 
     Menu.crearMenu(menuRequest)
-    .then(resultado => {
-        alert("se ah creado el menu!: "+resultado.id);
-        formularioContainer.innerHTML = cardMenu(resultado);
-    })
-    
+        .then(resultado => {
+
+            if (resultado.response.ok) {
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'menu creado con exito',
+                    text: `ID: ${resultado.result.id}`,
+                })
+                .then(() => { location.reload() });
+
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! intenta nuevamente',
+                    text: `revisa bien los datos del menu`,
+                })
+            }
+        })
+
 }
 
 
@@ -85,22 +122,19 @@ let fechaConsumir = document.getElementById("date_consumo_print");
 let fechaCarga = document.getElementById("date_carga_print");
 let fechaCierra = document.getElementById("date_venc_print");
 
-console.log(await ultimoMenu)
 
 fechaConsumir.innerText = formatoFechaEscrita(new Date(ultimoMenu.fecha_consumo));
-fechaCarga.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_carga));
+fechaCarga.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_carga),true);
 fechaCierra.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_cierre),true);
 codigoMenu.textContent = "ID: "+(ultimoMenu.id).toUpperCase();
 
 
 let opcionesMenu = document.getElementById("opciones_menu_dia");
 let platos = await Array.from(ultimoMenu.platillos);
-console.log(platos)
 
 platos.forEach(plato => {
 
     let texto = document.createElement("p");
-    texto.textContent = plato.descripcion +"\n stock: "+plato.stock+"\npedidos: "+plato.pedido;
+    texto.textContent = plato.descripcion +" || quedan: "+(plato.stock-plato.pedido)+"  pedidos: "+plato.pedido;
     opcionesMenu.appendChild(texto);
-    console.log(plato)
 })
