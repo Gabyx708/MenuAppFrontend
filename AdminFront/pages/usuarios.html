@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/usuarios.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Usuarios</title>
+</head>
+
+<body>
+
+    <div class="container-principal">
+
+        <div id="container_secundario">
+
+            <div class="form_container">
+                <form action="" class="form_empleado">
+
+                    <div class="header-form">
+                        <h3>crear un empleado</h3>
+                        <img src="/assets/images/bolsa.png" alt="icon_user">
+                      </div>
+                    <div class="row m-0">
+
+                        <div class="col m-0">
+
+                            <div class="input_container">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="sombra" name="nombre" id="nombre">
+                            </div>
+
+                            <div class="input_container">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" class="sombra" name="apellido" id="apellido">
+                            </div>
+
+                            <div class="input_container">
+                                <label for="dni">DNI</label>
+                                <input type="number" class="sombra" name="dni" id="dni">
+                            </div>
+
+
+                            <div class="input_container">
+                                <label for="privilegio">Privilegio</label>
+                                <select name="privilgeio" class="sombra" id="permisos_privilegio">
+                                    <option value="0">normal</option>
+                                    <option value="1">autorizado</option>
+                                    <option value="2">administrador</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col">
+
+                            
+                            <div class="input_container">
+                                <label for="nacimiento">Fecha Nacimiento</label>
+                                <input type="date" class="sombra" name="nacimiento" id="fecha_nacimiento">
+                            </div>
+
+                            <div class="input_container">
+                                <label for="ingreso">Fecha ingreso</label>
+                                <input type="date"  class="sombra" name="ingreso" id="fecha_ingreso">
+                            </div>
+
+                            <div class="input_container">
+                                <label for="correo">Correo electronico</label>
+                                <input type="email" class="sombra" name="correo" id="correo_electronico">
+                            </div>
+
+                            <div class="input_container">
+                                <label for="telefonos">Telefono contacto</label>
+                                <input type="number" class="sombra" name="telefono" id="num_telefono">
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <button id="btn_carga_empleado">CARGAR EMPLEADO</button>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</body>
+<script type="module" src="/js/callsForUsuarios.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.js"></script>
+
+</html>

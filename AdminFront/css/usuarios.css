@@ -1,0 +1,52 @@
+.container-principal{
+    background-color: var(--color-body);
+}
+
+/*--contiene todo---*/
+#container_secundario{
+   
+    background-color: none;
+    float: right;
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+/*--formulario de empleados---*/
+
+.header-form{
+    width: 100%;
+    text-align: center;
+    color: black;
+  }
+
+  .header-form img{
+    width: 50px;
+    margin-left: 20px;
+  }
+
+
+.form_empleado{
+    background-color: none;
+    float: right;
+    height: 100%;
+    display: grid;
+    grid-gap: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.5) -5px 8px 0px;
+}
+
+
+.input_container{
+    text-align: center;
+    font-weight: bold;
+}
+
+.input_container input, .input_container select{
+    border-radius: 5px;
+    width: 100%;
+}
