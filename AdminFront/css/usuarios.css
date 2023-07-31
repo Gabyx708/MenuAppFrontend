@@ -3,41 +3,46 @@
 }
 
 /*--contiene todo---*/
-#container_secundario{
-   
-    background-color: none;
-    float: right;
+#user_container{
+    padding: 5%;
     width: 95%;
-    height: 100%;
     display: grid;
     grid-gap: 30px;
     grid-template-columns: repeat(2,1fr);
+   
 }
 
 /*--formulario de empleados---*/
 
-.header-form{
-    width: 100%;
-    text-align: center;
+.header-form {
+    display: flex;
+    align-items: center;
     color: black;
-  }
+    margin: auto;
+    margin-bottom: 5%;
+}
 
-  .header-form img{
+.header-form img {
     width: 50px;
-    margin-left: 20px;
-  }
+    float: left;
+    margin-left: 30px;
+}
 
 
-.form_empleado{
-    background-color: none;
-    float: right;
-    height: 100%;
+.form_container{
+    height: 90vh;
+    width: 50%;
     display: grid;
     grid-gap: 30px;
     background-color: white;
     border-radius: 10px;
-    padding: 5%;
+    margin-left: 5%;
+    
     box-shadow: rgba(0, 0, 0, 0.5) -5px 8px 0px;
+}
+
+.form_empleado{
+    padding: 6%;
 }
 
 
@@ -49,4 +54,36 @@
 .input_container input, .input_container select{
     border-radius: 5px;
     width: 100%;
+    padding: 5%;
+    margin: 5px;
+}
+
+
+#btn_carga_empleado{
+    background-color: var(--color-header);
+    color: white;
+    font-weight: bold;
+    font-size: 15pt;
+    border-radius: 20px;
+    transition: all 0.3s;
+    margin: 5%;
+    padding: 3%;
+}
+
+#btn_carga_empleado:hover{
+    color: var(--color-header);
+    background-color: var(--color-body);
+}
+
+/*--lista de empleados--*/
+
+.lista_empleados{
+    background-color: none;
+    float: right;
+    display: grid;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.5) -5px 8px 0px;
 }
