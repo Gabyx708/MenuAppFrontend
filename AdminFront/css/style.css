@@ -29,6 +29,7 @@ html {
     height: 100vh;
     padding: 2%;
     position: absolute;
+    background-color: var(--color-body);
 }
 
 .sombra{

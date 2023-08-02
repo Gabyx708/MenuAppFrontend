@@ -5,7 +5,6 @@ let enpointPlatillo = `${api}/api/Platillo`;
 
 const crearPlatillo = async (platilloRequest) =>{
 
-  let result = [];
 
     const response = await fetch(enpointPlatillo, {
         method: "POST",
@@ -15,21 +14,17 @@ const crearPlatillo = async (platilloRequest) =>{
         body: JSON.stringify(platilloRequest),
       });
   
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      if(response.ok){
-        result.response =  response;
-        result.data = await response.json();
-      }
+    
+      const result = await response.json();
   
-      return result;
+      return {
+        response,
+        result,
+      };
 };
 
 const getPlatillo = async (id)=>{
 
-    let result = [];
 
     if(id != null){
       enpointPlatillo =  enpointPlatillo+"/"+id;
@@ -37,17 +32,13 @@ const getPlatillo = async (id)=>{
 
     const response = await fetch(enpointPlatillo);
     
-      if (!response.ok) {
-        throw new Error();
-      }
+    const result = await response.json();
 
-      if(response.ok){
-        result = await response.json();
-      }
-  
-      return result;
+    return {
+      response,
+      result,
+    };
 }
-
 
 export const Platillo = {
     Post : crearPlatillo,

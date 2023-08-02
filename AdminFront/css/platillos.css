@@ -1,0 +1,83 @@
+#pages_container{
+    background-color: none;
+    float: right;
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: "lista nuevo nuevo"
+                         "lista precio precio";
+}
+
+.container_platos_list{
+    grid-area: lista;
+    padding: 5%;
+    border: 2px solid var(--color-acento);
+    background-color: white;
+    border-radius: 20px;
+}
+
+.title_container{
+    text-align: center;
+}
+
+.container_platos_creator{
+    grid-area: nuevo;
+    padding: 5%;
+    border: 2px solid var(--color-acento);
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.container_platos_price{
+    grid-area: precio;
+    padding: 5%;
+    border: 2px solid var(--color-acento);
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+/*--estilos formulario--*/
+.container_platos_creator form{
+    width: 50%;
+    margin: auto;
+    font-size: 13pt;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_platos_creator form input{
+    border-radius: 5px;
+    padding: 1%;
+}
+
+label[for="precio"]{
+    margin-top: 10px;
+}
+
+.container_platos_creator form button{
+    padding: 1%;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: var(--color-header);
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.container_platos_creator form button:hover{
+    background-color: white;
+    color: var(--color-header);
+}
+
+/*--lista de platillos scroll---*/
+
+#container_items_platillos{
+    height: 500px;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 2%;
+}

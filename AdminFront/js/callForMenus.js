@@ -51,7 +51,8 @@ btnCrearMenu.addEventListener("click",(e) =>{
 /*--funciones--- */
 function agregarOciones(select){
 
-    platillos.forEach(plato => {
+    let listaPlatos = platillos.result;
+    listaPlatos.forEach(plato => {
         const option = document.createElement('option');
         const valor = plato.id;
         option.value = valor;

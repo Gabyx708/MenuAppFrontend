@@ -1,0 +1,15 @@
+.plato_item{
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.plato_item button{
+    border-radius: 5px;
+    padding: 1%;
+    color: white;
+    background-color: var(--color-header);
+    font-weight: bold;
+}
