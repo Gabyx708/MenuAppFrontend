@@ -1,6 +1,6 @@
 const config = {
 
-    apiUrl : "https://localhost:7135"
+    apiUrl : "http://10.54.54.24:8900"
 }
 
 
