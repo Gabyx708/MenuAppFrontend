@@ -29,11 +29,11 @@ const hacerUnPedido = async (pedidoRequest) => {
 
 const conseguirUltimo = async (idUsuario) => {
 
-    let enpoint = `${enpointPedido}?idPersonal=${idUsuario}&cantidad=${7}`;
+    let enpoint = `${config.apiUrl}/api/Pedidos?idPersonal=${idUsuario}&cantidad=${7}`;
     let result;
 
     if(idUsuario == null){
-      enpoint = `${enpointPedido}?cantidad=${4}`;
+      enpoint = `${config.apiUrl}/api/Pedidos?cantidad=${4}`;
     }
 
     const response = await fetch(enpoint);
