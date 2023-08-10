@@ -36,9 +36,11 @@ let montoFormateado = new Intl.NumberFormat('en-US', {
 divMonto.textContent = montoFormateado;
 
 let divCantidad = document.getElementById("cantidad_pedidos");
-divCantidad.textContent = cantidadDePedidos;
+divCantidad.textContent = cantidadDePedidos+" unidades";
 
 let divLabelPedidos = document.getElementById("label_pedidos");
+let divLabelCantidad = document.getElementById("label_cantidad");
 let fechaResultado = resultado.result.fecha;
 
-divLabelPedidos.textContent = `costo pedidos del : ${formatoFechaEscrita(fechaResultado)}`;
+divLabelPedidos.textContent = `a pagar pedidos del : ${formatoFechaEscrita(fechaResultado)}`;
+divLabelCantidad.textContent =  `cantidad de pedidos del : ${formatoFechaEscrita(fechaResultado)}`;

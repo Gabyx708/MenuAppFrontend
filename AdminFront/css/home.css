@@ -6,8 +6,8 @@
     display: grid;
     grid-gap: 10px;
     grid-template-areas: "salu salu salu"
-                        "pagar total menu"
-                         "reci  reci  menu"
+                        "pagar total total"
+                         "menu  menu  menu"
                          "pedi pedi pedi";
 }
 
@@ -54,4 +54,10 @@
     grid-area: reci;
     border-radius: 10px;
     background-color: white;
+}
+
+.cantidad-container{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
 }
