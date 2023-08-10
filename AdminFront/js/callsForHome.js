@@ -7,14 +7,7 @@ import formatoFechaEscrita from "../utils/formatoFechaEscrita.js";
 await pedidoResumen.pintarPedidos();
 await navBar.getNavbar(); 
 
-const btnCerrarSesion = document.getElementById("cerrar-sesion");
 
-btnCerrarSesion.addEventListener("click",(e) => {
-        e.preventDefault();
-        
-        cerrarSesion();
-        location.href = "/index.html";
-})
 
 /*-- logica para hacer el saludo --*/
 
