@@ -20,6 +20,7 @@
         <div class="dashboard-container">
 
             <h2 id="saludo">Buenos dias , DEFAULT</h2>
+            <h3 id="dia_actual"></h3>
 
             <div id="monto-pagar" class="card_home">
                 <h4 id="label_pedidos">a pagar de pedidos:</h4>
@@ -29,25 +30,31 @@
             <div id="cant-pedidos" class="card_home">
                 <h4 id="label_cantidad">cantidad de pedidos para hoy:</h4>
                 <div class="cantidad-container">
-                    <h3 style="color: gray" id="cantidad_pedidos" class="ml-3">10/60</h3>
-                    <img src="/assets/images/userYellow.png" width="50px" alt="usuarios">
+                    <h3 style="color: gray" id="cantidad_pedidos">000</h3>
+                    <img src="/assets/images/userYellow.png" width="50px"  alt="usuarios">
                 </div>
                 
                 
             </div>
 
             <div id="last-menu" class="card_home">
-                <h5>Menu mas reciente</h5>
+                <div class="cantidad-container">
+                <h4>Menu obtenido mas reciente</h4>
+                <img src="/assets/images/bolsa.png" width="50px" alt="menu">
+            </div>
                 <hr>
-                <h6 style="color:orange">DISPONIBILIDAD</h6>
-                <p>Milanesa: 23</p>
-                <p>Mondongo: 15</p>
-                <p>Mondongo : 2</p>
+                <div class="menu_fechas">
+                    <h6 id="date_carga">de carga: </h6>
+                    <h6 id="date_consumo">fecha de consumo: fecha</h6>
+                    <h6 id="date_cierre">fecha de cierre: fecha</h6>
+                </div>
+                <hr>    
+                <div id="menu-opciones-container"></div>
             </div>
         
 
             <div id="recientes-container" class="recientes-container card_home">
-                <h4>Pedidos recientes</h4>
+                <h4>Ultimos pedidos</h4>
                 <hr>
             </div>
     

@@ -26,6 +26,8 @@
     grid-area: pedi;
 }
 
+
+
 .card_home{
     padding: 3%;
     text-align: center;
@@ -60,4 +62,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#menu-opciones-container{
+    display: inline-flex;
+}
+
+#menu-opciones-container div{
+    margin: 10px;
+}
+
+.menu_fechas{
+    border-radius: 10px;
+    width: 100%;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid var(--color-acento);
+}
+
+.menu_fechas h6{
+    margin: 1%;
 }
