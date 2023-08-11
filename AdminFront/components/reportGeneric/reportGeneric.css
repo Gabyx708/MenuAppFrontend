@@ -1,0 +1,50 @@
+.report_container{
+    background-color: white;
+    padding: 2%;
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: 60%;
+}
+
+.cuerpo_report{
+    width: 90%;
+    margin: auto;
+}
+
+.cabecera_reporte {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Agrega espacio entre los elementos */
+}
+
+.cabecera_reporte img {
+    margin-right: 20px;
+}
+
+.left {
+    margin-left: auto; /* Cambia float por margen izquierdo automático */
+}
+
+
+.periodo_container {
+    text-align: center;
+}
+.periodo_container div{
+    justify-content: center;
+    display: flex;
+}
+
+.periodo_container div h4{margin: 10px;}
+
+.resultados_reporte{
+    display: flex;
+    justify-content: center;
+}
+
+.resultados_reporte h4{padding: 2%;}
+
+
+/* colores */
+.green{color: green;}
+.red { color: red;}
+.yellow {color: yellow;}

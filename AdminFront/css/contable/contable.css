@@ -1,0 +1,44 @@
+.contable_container{
+    background-color: none;
+    float: right;
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+
+
+
+.card-container{
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    border: 3px solid var(--color-acento);
+
+}
+
+
+.img-container{
+    padding: 5%;
+}
+
+.card-container button{
+    font-weight: bold;
+    padding: 4%;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--color-header);
+    transition: all 0.3S;
+}
+
+.card-container button:hover{
+    color: var(--color-header);
+    background-color: white;
+    scale: 1.2;
+}
