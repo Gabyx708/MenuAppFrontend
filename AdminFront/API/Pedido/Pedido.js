@@ -69,9 +69,34 @@ const conseguirPedido = async (idPedido) => {
 
 }
 
+const conseguirPedidosFiltrado = async (idUsuario,fechaInicio,fechaUltimo) => {
+
+  let enpoint = `${config.apiUrl}/api/Pedidos?idPersonal=${idUsuario}&Desde=${fechaInicio}&Hasta=${fechaUltimo}`;
+  let result;
+
+  if(idUsuario == null){
+
+    enpoint = `${config.apiUrl}/api/Pedidos?Desde=${fechaInicio}&Hasta=${fechaUltimo}`;
+  }
+
+  const response = await fetch(enpoint);
+  
+  if (!response.ok) {
+    throw new Error();
+  }
+
+  if(response.ok){
+    result = await response.json();
+  }
+
+  return result;
+
+}
+
 export const Pedido = {
 
     hacerUnPedido : hacerUnPedido,
     ultimosPedidos : conseguirUltimo,
-    GetById : conseguirPedido
+    GetById : conseguirPedido,
+    conseguirPedidosFiltrado : conseguirPedidosFiltrado
 }

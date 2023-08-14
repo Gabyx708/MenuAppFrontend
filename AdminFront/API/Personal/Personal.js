@@ -1,4 +1,5 @@
 import config from "../../config/config.js";
+import { Costos } from "../Costos/Costo.js";
 
 const api = config.apiUrl;
 const enpointPersonal = `${api}/api/Personal`;
@@ -20,6 +21,18 @@ const crearPersonal = async (personalRequest) => {
   };
 };
 
+const getAllPersonal = async ()=>{
+
+  const response = await fetch(enpointPersonal);
+  const result = await response.json();
+
+  return {
+    response,
+    result,
+  };
+}
+
 export const Personal = {
-  Post: crearPersonal
+  Post: crearPersonal,
+  GetAll : getAllPersonal
 };

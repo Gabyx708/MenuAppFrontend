@@ -32,7 +32,7 @@ fechaActual.setDate(fechaActual.getDate() - 1);
 
 let fecha = fechaActual.toISOString().split('T')[0];
 
-console.log("---"+fecha)
+
 let divMonto = document.getElementById("monto_hoy");
 let costosDeHoy =  await Costos.obtenerCostoDelDia(fecha);
 let resultado =  costosDeHoy;

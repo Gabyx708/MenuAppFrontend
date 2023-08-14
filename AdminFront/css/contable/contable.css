@@ -10,35 +10,47 @@
 
 
 
-.card-container{
-    background-color: white;
-    text-align: center;
+section {
+    display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%; /* Ajusta la altura de acuerdo a tus necesidades */
+}
+
+.card-container {
+    background-color: white;
+    text-align: center;
     padding: 5%;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo para evitar que la tarjeta sea demasiado ancha */
     border-radius: 20px;
     border: 3px solid var(--color-acento);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Añade espacio entre los elementos internos */
 }
 
-
-.img-container{
+.img-container {
     padding: 5%;
 }
 
-.card-container button{
+.card-container button {
     font-weight: bold;
     padding: 4%;
     border-radius: 10px;
     color: white;
     background-color: var(--color-header);
-    transition: all 0.3S;
+    transition: all 0.3s;
 }
 
-.card-container button:hover{
+.card-container button:hover {
     color: var(--color-header);
     background-color: white;
-    scale: 1.2;
+    transform: scale(1.2); /* Cambia "scale" por "transform" para aplicar el efecto de escala */
+}
+
+#select_emp{
+    padding: 2%;
 }
