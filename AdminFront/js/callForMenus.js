@@ -68,6 +68,10 @@ function crearMenu(){
     let fechaVencimiento = document.getElementById("date_venc").value;
     let menuPlatillos = [];
 
+    fechaConsumo = new Date(fechaConsumo).toISOString();
+    fechaVencimiento = new Date(fechaVencimiento).toISOString();
+    console.log(fechaConsumo)
+    console.log(fechaVencimiento)
     for (let i = 0; i < $selects.length; i++) {
         
        let idPlatillo = $selects[i].value;
