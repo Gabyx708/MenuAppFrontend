@@ -1,5 +1,5 @@
 import { Menu } from "../API/Menu/Menu.js";
-import { Pedido } from "../API/Pedido/pedido.js";
+import { Pedido } from "../API/Pedido/Pedido.js";
 import { MenuComponent } from "../components/Menu/menu.js";
 import platillo from "../components/platillo/platillo.js";
 
