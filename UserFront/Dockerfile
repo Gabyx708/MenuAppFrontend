@@ -5,7 +5,8 @@ FROM nginx:latest
 RUN rm -v /etc/nginx/nginx.conf
 
 # Copy your custom NGINX configuration
-COPY nginx/nginx.conf /etc/nginx/
+COPY ./nginx.conf /etc/nginx/
+
 
 # Copy the contents of the current directory to the NGINX document root
 COPY . /usr/share/nginx/html
