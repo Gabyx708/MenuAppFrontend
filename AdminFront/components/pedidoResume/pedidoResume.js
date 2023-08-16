@@ -13,7 +13,6 @@ async function getPedidos() {
     let listaPedidos = Array.from(pedidos);
 
     listaPedidos.forEach(pedido => {
-        console.log(pedido)
         divResume.innerHTML += pedidoResume(pedido);
     })
 }

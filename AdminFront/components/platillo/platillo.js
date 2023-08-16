@@ -25,7 +25,6 @@ async function pintarOpciones() {
                     div.classList.add("desactivo");
 
             }
-            console.log(cantidad)
         })
     });
 

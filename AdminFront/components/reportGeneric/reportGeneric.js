@@ -21,7 +21,6 @@ async function getReporte(){
 
     if(tipoReporte === "dia"){
         pintarReporteDia(reportData);
-        console.log("dia")
     }
 
     if(tipoReporte === "periodo"){
@@ -63,7 +62,7 @@ function pintarReporteDia(reportData){
 }
 
 function pintarReportePeriodo(reportData){
-    console.log(reportData)
+
     let reportMap = {
         desde : formatoFechaEscrita(reportData.inicio),
         hasta: formatoFechaEscrita(reportData.fin),

@@ -58,7 +58,6 @@ function pintarPedidosReporte(pedidos) {
 
     pedidos.forEach((pedido) => {
         divPedidos.innerHTML += pedidoResume(pedido);
-        console.log(pedido.id)
     })
 
     /*-- logica para para consultar un pedido especifico--*/

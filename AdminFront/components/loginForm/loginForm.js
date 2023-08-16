@@ -48,7 +48,6 @@ function logicarFormulario() {
 
             if (responseData.ok) {
 
-                console.log(responseData);
                 window.location.replace("/pages/home.html");
             }
 
