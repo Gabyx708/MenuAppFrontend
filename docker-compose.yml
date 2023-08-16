@@ -5,3 +5,9 @@ services:
       context: ./UserFront # Ruta a la carpeta que contiene el Dockerfile
     ports:
       - "8080:80" # Mapeo del puerto del contenedor a tu máquina
+
+  adminapp:
+    build: 
+      context: ./AdminFront
+    ports:
+      - "9090:80"
