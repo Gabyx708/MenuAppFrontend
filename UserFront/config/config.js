@@ -1,6 +1,6 @@
 const config = {
 
-    apiUrl : "https://localhost:7135"
+    apiUrl : "http//api.menu.tecnaingenieria.com:60000"
 }
 
 
