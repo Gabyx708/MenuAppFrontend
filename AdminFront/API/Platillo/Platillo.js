@@ -28,6 +28,8 @@ const getPlatillo = async (id)=>{
 
     if(id != null){
       enpointPlatillo =  enpointPlatillo+"/"+id;
+    }else{
+      enpointPlatillo =  enpointPlatillo+"s";
     }
 
     const response = await fetch(enpointPlatillo);
