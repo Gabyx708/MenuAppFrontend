@@ -64,9 +64,29 @@ const conseguirPedido = async (idPedido) => {
 
 }
 
+const borrarPedido = async (id) =>{
+
+  const enpointEliminar = enpointPedido+"/"+id;
+
+  const response = await fetch(enpointEliminar, {
+    method: "DELETE"});
+
+    if (!response.ok) {
+      return response;
+    }
+
+
+    if(response.ok){
+        return response;
+    }
+
+    return response;
+}
+
 export const Pedido = {
 
     hacerUnPedido : hacerUnPedido,
     ultimosPedidos : conseguirUltimo,
-    GetById : conseguirPedido
+    GetById : conseguirPedido,
+    borrarPedido : borrarPedido
 }

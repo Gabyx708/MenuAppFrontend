@@ -1,11 +1,26 @@
 import { Menu } from "../API/Menu/Menu.js";
 import { Pedido } from "../API/Pedido/Pedido.js";
 import { MenuComponent } from "../components/Menu/menu.js";
+import { botonArrepentimiento } from "../components/botonArrepentimiento/botonArrepentimiento.js";
 import platillo from "../components/platillo/platillo.js";
 
+const pedidoDeHoy = localStorage.getItem("pedidoHecho");
 
 await platillo.pintarOpciones();
 MenuComponent.menuComponente();
+
+if(pedidoDeHoy != null){
+    
+    let opcionesPlatillo = Array.from(document.getElementsByClassName("platillo-container"));
+
+    opcionesPlatillo.forEach(opcion =>{
+            opcion.style.display = "none";
+    })
+
+    let menuOpcionesContainer = document.getElementById("menu-opciones-container");
+    menuOpcionesContainer.style.display = "flex";
+    botonArrepentimiento.pintarArrepentimientoCard();   
+}
 
 let opciones = Array.from(document.getElementsByClassName("platillo-body"));
 
@@ -54,7 +69,11 @@ const hacerElPedido = async (idMenuPlatillo) => {
     }else{
         let objetoPedido = await respuestaPedido;
 
-        await sessionStorage.setItem("pedido",JSON.stringify(objetoPedido))
+        let objectoMenu = JSON.parse(sessionStorage.getItem("menu"));
+
+        await sessionStorage.setItem("pedido",JSON.stringify(objetoPedido));
+        await localStorage.setItem("pedidoHecho",JSON.stringify(objetoPedido));
+        await localStorage.setItem("fecha_caduca_pedido",objectoMenu.fecha_cierre)
         location.href = "/pages/recibo.html"
     }
 
