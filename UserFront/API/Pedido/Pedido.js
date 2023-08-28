@@ -83,10 +83,29 @@ const borrarPedido = async (id) =>{
     return response;
 }
 
+const ultimoPedido = async () => {
+
+  let idUsuario = JSON.parse(sessionStorage.getItem("user")).id;
+  let enpoint = `${enpointPedido}s?idPersonal=${idUsuario}&cantidad=${1}`;
+  let result;
+  const response = await fetch(enpoint);
+  
+  if (!response.ok) {
+    throw new Error();
+  }
+
+  if(response.ok){
+    result = await response.json();
+  }
+
+  return result;
+}
+
 export const Pedido = {
 
     hacerUnPedido : hacerUnPedido,
     ultimosPedidos : conseguirUltimo,
     GetById : conseguirPedido,
-    borrarPedido : borrarPedido
+    borrarPedido : borrarPedido,
+    ultimoPedido : ultimoPedido
 }

@@ -4,12 +4,20 @@ import { MenuComponent } from "../components/Menu/menu.js";
 import { botonArrepentimiento } from "../components/botonArrepentimiento/botonArrepentimiento.js";
 import platillo from "../components/platillo/platillo.js";
 
-const pedidoDeHoy = localStorage.getItem("pedidoHecho");
+const ultimoPedido = await Pedido.ultimoPedido();
+sessionStorage.setItem("pedidoHecho",JSON.stringify(ultimoPedido));
+
+const pedidoDeHoy = await JSON.stringify(sessionStorage.getItem("pedidoHecho"));
 
 await platillo.pintarOpciones();
 MenuComponent.menuComponente();
 
-if(pedidoDeHoy != null){
+let diaDeHoy = new Date().getDate();
+let diaPedido = new Date(pedidoDeHoy[0].pedido).getDate();
+
+console.log(diaDeHoy+"----"+pedidoDeHoy)
+
+if( diaDeHoy == diaPedido){
     
     let opcionesPlatillo = Array.from(document.getElementsByClassName("platillo-container"));
 
