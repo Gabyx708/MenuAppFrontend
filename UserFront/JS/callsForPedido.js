@@ -3,31 +3,47 @@ import { Pedido } from "../API/Pedido/Pedido.js";
 import { MenuComponent } from "../components/Menu/menu.js";
 import { botonArrepentimiento } from "../components/botonArrepentimiento/botonArrepentimiento.js";
 import platillo from "../components/platillo/platillo.js";
+import { closeTarjeta } from "../components/closeCard/closeCard.js";
+import fraseRandom from "../utils/fraseRandom.js";
+
 
 const ultimoPedido = await Pedido.ultimoPedido();
 sessionStorage.setItem("pedidoHecho",JSON.stringify(ultimoPedido));
 
-const pedidoDeHoy = await JSON.stringify(sessionStorage.getItem("pedidoHecho"));
+const pedidoDeHoy = await JSON.parse(sessionStorage.getItem("pedidoHecho"))[0];
 
 await platillo.pintarOpciones();
 MenuComponent.menuComponente();
 
+const menuReciente = JSON.parse(sessionStorage.getItem("menu"));
+console.log(menuReciente.fecha_cierre)
+
+let fechaCierreMenu = new Date(menuReciente.fecha_cierre);
+let fechaHoraAhora = Date.now();
 let diaDeHoy = new Date().getDate();
-let diaPedido = new Date(pedidoDeHoy[0].pedido).getDate();
+let diaPedido = null;
 
-console.log(diaDeHoy+"----"+pedidoDeHoy)
+if(pedidoDeHoy != null){
 
-if( diaDeHoy == diaPedido){
-    
-    let opcionesPlatillo = Array.from(document.getElementsByClassName("platillo-container"));
+     diaPedido = new Date(pedidoDeHoy.fecha).getDate();
+}
 
-    opcionesPlatillo.forEach(opcion =>{
-            opcion.style.display = "none";
-    })
+if (fechaCierreMenu < fechaHoraAhora) {
 
-    let menuOpcionesContainer = document.getElementById("menu-opciones-container");
-    menuOpcionesContainer.style.display = "flex";
-    botonArrepentimiento.pintarArrepentimientoCard();   
+    ocultarOpcionesMenu();
+    closeTarjeta.pintarCloseCard();
+
+    const fraseSarcastica = document.getElementById("frase_sarcastica");
+    fraseSarcastica.textContent = fraseRandom();
+
+} else {
+
+    if (diaDeHoy === diaPedido) {
+
+        ocultarOpcionesMenu();
+        botonArrepentimiento.pintarArrepentimientoCard();
+    }
+
 }
 
 let opciones = Array.from(document.getElementsByClassName("platillo-body"));
@@ -84,6 +100,20 @@ const hacerElPedido = async (idMenuPlatillo) => {
         await localStorage.setItem("fecha_caduca_pedido",objectoMenu.fecha_cierre)
         location.href = "/pages/recibo.html"
     }
+
+}
+
+
+function ocultarOpcionesMenu(){
+
+    let opcionesPlatillo = Array.from(document.getElementsByClassName("platillo-container"));
+
+    opcionesPlatillo.forEach(opcion =>{
+            opcion.style.display = "none";
+    })
+
+    let menuOpcionesContainer = document.getElementById("menu-opciones-container");
+    menuOpcionesContainer.style.display = "flex";
 
 }
   

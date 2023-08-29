@@ -14,54 +14,64 @@ async function getLoginForm(){
 
 };
 
+
 function logicarFormulario() {
+  const loginForm = document.querySelector('form');
+  const submitButton = document.querySelector('.submit-button');
+  const spinner = document.querySelector('.spinner');
 
-    //logica del formulario
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-    const loginForm = document.querySelector('form');
+    const username = document.querySelector('input[name="usuario"]').value;
+    const password = document.querySelector('input[name="password"]').value;
 
-    loginForm.addEventListener('submit', async (event) => {
+    const loginRequest = {
+      username: username,
+      password: password
+    };
 
-        event.preventDefault();
+    // Mostrar el spinner y deshabilitar el botón
+    spinner.classList.remove('hidden');
+    submitButton.disabled = true;
+    
 
-        const username = document.querySelector('input[name="usuario"]').value;
-        const password = document.querySelector('input[name="password"]').value;
+    try {
+        const responseData = await Login.Loguerse(loginRequest)
 
-        const loginRequest = {
+        if(responseData.status == 401){
 
-            username: username,
-            password: password
+            Swal.fire(
+                'usuario y/o contraseña incorrecta',
+                'revisa bien estos datos',
+                'question'
+              )
+
         };
 
-        try {
-            const responseData = await Login.Loguerse(loginRequest)
+        if (responseData.ok) {
 
-            if(responseData.status == 401){
-
-                Swal.fire(
-                    'usuario y/o contraseña incorrecta',
-                    'revisa bien estos datos',
-                    'question'
-                  )
-
-            };
-
-            if (responseData.ok) {
-
-                console.log(responseData);
-                window.location.replace("/pages/home.html");
-            }
-
-        } catch (error) {
-            console.error('Error:', error);
             console.log(responseData);
+            window.location.replace("/pages/home.html");
         }
 
+    } catch (error) {
+        console.error('Error encontrado:', error);
+        
+        Swal.fire({
+            imageUrl: '/assets/images/engranes.gif',
+            title: 'el servidor no responde',
+            imageWidth: 200,
+            imageHeight: 200
+        })
 
-    });
+         // Ocultar el spinner y habilitar el botón nuevamente
+         spinner.classList.add('hidden');
+         submitButton.disabled = false;
+    }
+  });
+}
 
-
-};
 
 
 export const FormLogin = {
