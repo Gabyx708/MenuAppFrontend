@@ -47,6 +47,9 @@ function logicarFormulario() {
                 'question'
               )
 
+              spinner.classList.add('hidden');
+              submitButton.disabled = false;
+
         };
 
         if (responseData.ok) {
