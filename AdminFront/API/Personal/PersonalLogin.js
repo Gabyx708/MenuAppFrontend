@@ -1,6 +1,6 @@
 import config from "../../config/config.js";
 
-const endpointLogin =  `${config.apiUrl}/api/Personal/login`;
+const endpointLogin =  `${config.apiUrl}/Personal/login`;
 
 const loguearUsuario = async (UsuarioLoginRequest) => {
 

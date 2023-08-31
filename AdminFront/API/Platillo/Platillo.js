@@ -1,7 +1,7 @@
 import config from "../../config/config.js";
 
 const api = config.apiUrl;
-let enpointPlatillo = `${api}/api/Platillo`;
+let enpointPlatillo = `${api}/Platillo`;
 
 const crearPlatillo = async (platilloRequest) =>{
 
