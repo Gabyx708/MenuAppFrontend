@@ -1,6 +1,6 @@
 import config from "../../config/config.js";
 
-const enpointPedido =  `${config.apiUrl}/api/Pedido`;
+const enpointPedido =  `${config.apiUrl}/Pedido`;
 
 const hacerUnPedido = async (pedidoRequest) => {
 
@@ -29,7 +29,8 @@ const hacerUnPedido = async (pedidoRequest) => {
 
 const conseguirUltimo = async (idUsuario) => {
 
-    let enpoint = `${enpointPedido}s?idPersonal=${idUsuario}&cantidad=${7}`;
+    let cantPedidos = 7
+    let enpoint = `${enpointPedido}s?idPersonal=${idUsuario}&cantidad=${cantPedidos}`;
     let result;
     const response = await fetch(enpoint);
     
