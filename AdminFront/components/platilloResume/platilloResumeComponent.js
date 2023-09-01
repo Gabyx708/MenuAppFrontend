@@ -1,6 +1,6 @@
 export default function platilloResumeComponente(platoData){
 
-    const truncatedDescripcion = platoData.descripcion.substring(0, 15) + '...'; 
+    const truncatedDescripcion = platoData.descripcion; 
 
     return `<div class="plato_item sombra">
     <p>${truncatedDescripcion}</p>

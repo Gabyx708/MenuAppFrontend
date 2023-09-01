@@ -1,10 +1,9 @@
 import config from "../../config/config.js";
 
 const api = config.apiUrl;
-let enpointPlatillo = `${api}/Platillo`;
+const enpointPlatillo = `${api}/Platillo`;
 
 const crearPlatillo = async (platilloRequest) =>{
-
 
     const response = await fetch(enpointPlatillo, {
         method: "POST",
@@ -25,14 +24,15 @@ const crearPlatillo = async (platilloRequest) =>{
 
 const getPlatillo = async (id)=>{
 
+  let enpoint;
 
     if(id != null){
-      enpointPlatillo =  enpointPlatillo+"/"+id;
+      enpoint =  enpointPlatillo+"/"+id;
     }else{
-      enpointPlatillo =  enpointPlatillo+"s";
+      enpoint =  enpointPlatillo+"s";
     }
 
-    const response = await fetch(enpointPlatillo);
+    const response = await fetch(enpoint);
     
     const result = await response.json();
 
@@ -42,7 +42,20 @@ const getPlatillo = async (id)=>{
     };
 }
 
+const alterarPrecioAll = async (precio) => {
+
+  let enpoint = enpointPlatillo+"s?nuevoPrecio="+precio;
+
+  const response = await fetch(enpoint,{method: "PATCH"});
+
+  const result = await response;
+
+  return result;
+
+}
+
 export const Platillo = {
     Post : crearPlatillo,
-    Get : getPlatillo
+    Get : getPlatillo,
+    alterarPrecioAll : alterarPrecioAll
 }

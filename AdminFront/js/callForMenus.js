@@ -52,12 +52,19 @@ btnCrearMenu.addEventListener("click",(e) =>{
 function agregarOciones(select){
 
     let listaPlatos = platillos.result;
+    listaPlatos.sort((a, b) => a.descripcion.localeCompare(b.descripcion));
+
     listaPlatos.forEach(plato => {
+        const label = document.createElement("label");
         const option = document.createElement('option');
         const valor = plato.id;
         option.value = valor;
-        option.text = plato.descripcion;
-       select.appendChild(option);
+        option.text = ` ${plato.descripcion}`;
+
+        label.textContent =  ` ($${plato.precio})`;
+        select.appendChild(option);
+        option.appendChild(label);
+
     });
 }
 
