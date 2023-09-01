@@ -58,7 +58,7 @@ btnActivar.addEventListener("click",async (e)=>{
                 sessionStorage.setItem("user", JSON.stringify(persona));
 
                 Swal.fire(
-                    'Activada',
+                    'Activado',
                     'el bot esta despierto.',
                     'success'
                 ).then((resultado) => { location.reload() })
