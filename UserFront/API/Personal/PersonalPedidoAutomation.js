@@ -4,7 +4,7 @@ const endpointAutomatizar =  `${config.apiUrl}/Personal/automation`;
 
 const automatizarPedido = async (automationRequest) => {
 
-    const response = await fetch("https://localhost:7135/api/v1.2/Personal/automation", {
+    const response = await fetch(endpointAutomatizar, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
