@@ -24,7 +24,24 @@ const loguearUsuario = async (UsuarioLoginRequest) => {
       return response;
 };
 
+const changePassword = async (id,PersonalPaswordRequest) => {
+
+  const endpointPassword = `${config.apiUrl}/Personal/password/${id}`;
+
+  const response = await fetch(endpointPassword, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(PersonalPaswordRequest),
+  });
+
+  return response;
+
+}
+
 export const Login = {
 
-    Loguerse : loguearUsuario
+    Loguerse : loguearUsuario,
+    changePassword : changePassword
 }
