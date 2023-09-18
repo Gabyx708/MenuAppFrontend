@@ -105,6 +105,7 @@ btnGastoEmpleado.addEventListener("click",async (e) =>{
     let personas = await Personal.GetAll();
 
     let listaPersonas = Array.from(personas.result);
+    listaPersonas.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
     Swal.fire({
         title: "empleado a consultar",

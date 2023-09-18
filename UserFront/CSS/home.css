@@ -3,9 +3,9 @@
  align-items: center;
  align-content: center;
  display: grid;
- width: 70%;
+ width: 80%;
  padding: 5%;
- grid-template-columns: repeat(2,1fr);
+ grid-template-columns: repeat(3,1fr);
  gap: 50px;
 }
 

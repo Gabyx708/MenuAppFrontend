@@ -5,7 +5,8 @@ export default function pedidoResume(pedidoData){
     let pedido = String(pedidoData.id).substring(0,String(pedidoData.id).length -22);
     return `<div class="pedido_item">
     <p class="pedido">Pedido N°:${pedido}*****</p>
-    <p>Fecha: ${formatoFechaEscrita(fecha,true)}</p>
+    <p class="pedido">${pedidoData.nombre}</p>
+    <p>se pidio el: ${formatoFechaEscrita(fecha,true)}</p>
     <button value="${pedidoData.id}" class="boton-detalle">
         ver detalle
     </button>

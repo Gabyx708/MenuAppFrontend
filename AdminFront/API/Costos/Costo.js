@@ -1,7 +1,7 @@
 import config from "../../config/config.js";
 
 const api = config.apiUrl;
-const enpointCostos = `${api}/api/Costo`;
+const enpointCostos = `${api}/Costo`;
 
 const obtenerCostoDelDia = async (fecha) =>{
 

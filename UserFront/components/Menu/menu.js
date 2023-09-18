@@ -8,6 +8,8 @@ async function getMenu(){
 
     const response = await fetch('/components/Menu/menu.html');
     const menuData = await Menu.GetSiguiente();
+
+    sessionStorage.setItem("menu",JSON.stringify(menuData));
     
     const menu = pintarMenu(menuData);
     divMenu.innerHTML = menu;

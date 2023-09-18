@@ -10,6 +10,7 @@
     --color-acento: #e3aa14;
     --color-header: #0e88ec;
     --color-body: #EFEFEF;
+    --green-light: #97cc97;
     --color-footer: var(--color-header) /*#48586D*/;
     --color-nav: none;
 }

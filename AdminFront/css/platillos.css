@@ -36,6 +36,7 @@
     border: 2px solid var(--color-acento);
     background-color: white;
     border-radius: 20px;
+    text-align: center;
 }
 
 
@@ -80,4 +81,19 @@ label[for="precio"]{
     overflow-y: scroll;
     width: 100%;
     padding: 2%;
+}
+
+
+/*--alterador de precio--*/
+.price-container{
+    padding: 2%;
+    display: flex; /* Usar flexbox para centrar */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.price-container input{
+    padding: 1%;
+    border-radius: 5px;
+    margin-right: 10px;
 }

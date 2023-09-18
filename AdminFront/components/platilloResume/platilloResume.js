@@ -10,6 +10,7 @@ async function getPlatillos() {
     agregarEstilo("/components/platilloResume/platilloResume.css");
 
     let listaPlatillos = Array.from(platillos.result);
+    listaPlatillos.sort((a, b) => a.descripcion.localeCompare(b.descripcion));
     
     listaPlatillos.forEach(plato => {
         divParaLista.innerHTML += platilloResumeComponente(plato);

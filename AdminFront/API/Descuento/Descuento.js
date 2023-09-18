@@ -1,7 +1,7 @@
 import config from "../../config/config.js";
 
 const api = config.apiUrl;
-const enpointDescuento = `${api}/api/Descuento`;
+const enpointDescuento = `${api}/Descuento`;
 
 const crearDescuento = async (descuentoRequest) => {
 

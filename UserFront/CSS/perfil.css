@@ -1,0 +1,78 @@
+main{
+    text-align: center;
+    padding: 1%;
+}
+
+main h3{
+    margin-bottom: 20px;
+}
+
+.profile_data{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2%;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+}
+
+/* Estilo del contenedor del rectángulo */
+.card_data {
+    width: 200px; 
+    padding: 10px; 
+    background-color: #f2f2f2; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    text-align: center; 
+}
+
+/* Estilo para la imagen */
+.card_data img {
+    display: block; 
+    margin: 0 auto 10px; 
+}
+
+.card_data label {
+    font-weight: bold;
+}
+
+.card_data p {
+    margin: 0;
+    color: var(--color-header);
+}
+
+.section_passw{
+    margin: auto;
+    padding: 1%;
+    margin-bottom: 50px;
+}
+
+.card_passw{
+    margin: auto;
+    width: 56%;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex; /* Utiliza flexbox */
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.section_passw :hover{
+    cursor: pointer;
+    background-color: var(--color-header);
+    color: white;
+}
+
+.card_passw img{
+    display: block;
+    max-width: 50px;
+}
+
+/*--- estilos del formulario de password --*/
+
+
+

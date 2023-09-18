@@ -52,12 +52,19 @@ btnCrearMenu.addEventListener("click",(e) =>{
 function agregarOciones(select){
 
     let listaPlatos = platillos.result;
+    listaPlatos.sort((a, b) => a.descripcion.localeCompare(b.descripcion));
+
     listaPlatos.forEach(plato => {
+        const label = document.createElement("label");
         const option = document.createElement('option');
         const valor = plato.id;
         option.value = valor;
-        option.text = plato.descripcion;
-       select.appendChild(option);
+        option.text = ` ${plato.descripcion}`;
+
+        label.textContent =  ` ($${plato.precio})`;
+        select.appendChild(option);
+        option.appendChild(label);
+
     });
 }
 
@@ -92,26 +99,35 @@ function crearMenu(){
     }
 
 
-    Menu.crearMenu(menuRequest)
-        .then(resultado => {
+   // Mostrar la animación de carga antes de hacer la solicitud
+Swal.fire({
+    title: 'creando menu , aguarda...',
+    allowOutsideClick: false, // Evita que el usuario cierre la alerta
+    onBeforeOpen: () => {
+        Swal.showLoading();
+    }
+});
 
-            if (resultado.response.ok) {
+// Realizar la solicitud
+Menu.crearMenu(menuRequest)
+    .then(resultado => {
+        if (resultado.response.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Menú creado con éxito',
+                text: `ID: ${resultado.result.id}`,
+            }).then(() => {
+                location.reload();
+            });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Ups! Intenta nuevamente',
+                text: 'Revisa bien los datos del menú',
+            });
+        }
+    });
 
-                Swal.fire({
-                    icon: 'success',
-                    title: 'menu creado con exito',
-                    text: `ID: ${resultado.result.id}`,
-                })
-                .then(() => { location.reload() });
-
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups! intenta nuevamente',
-                    text: `revisa bien los datos del menu`,
-                })
-            }
-        })
 
 }
 
@@ -143,3 +159,26 @@ platos.forEach(plato => {
     texto.textContent = plato.descripcion +" || quedan: "+(plato.stock-plato.pedido)+"  pedidos: "+plato.pedido;
     opcionesMenu.appendChild(texto);
 })
+
+/*--LOGICA PARA SETEAR FECHAS POR DEFECTO--*/
+
+// Obtén el elemento de input por su ID
+const dateInput = document.getElementById("date_venc");
+
+// Crea una nueva instancia de Date para obtener la fecha y hora actuales
+const now = new Date();
+
+// Establece la fecha actual
+const year = now.getFullYear();
+const month = (now.getMonth() + 1).toString().padStart(2, '0'); // El mes se indexa desde 0, así que sumamos 1
+const day = now.getDate().toString().padStart(2, '0');
+
+// Establece la hora en 17:00
+const hour = '17';
+const minute = '00';
+
+// Formatea la fecha y hora en el formato requerido (AAAA-MM-DDTHH:mm)
+const defaultValue = `${year}-${month}-${day}T${hour}:${minute}`;
+
+// Establece el valor del campo datetime-local
+dateInput.value = defaultValue;

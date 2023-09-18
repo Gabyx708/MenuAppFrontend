@@ -1,6 +1,6 @@
 import config from "../../config/config.js";
 
-const enpointPedido =  `${config.apiUrl}/api/Pedido`;
+const enpointPedido =  `${config.apiUrl}/Pedido`;
 
 const hacerUnPedido = async (pedidoRequest) => {
 
@@ -29,11 +29,11 @@ const hacerUnPedido = async (pedidoRequest) => {
 
 const conseguirUltimo = async (idUsuario) => {
 
-    let enpoint = `${config.apiUrl}/api/Pedidos?idPersonal=${idUsuario}&cantidad=${7}`;
+    let enpoint = `${config.apiUrl}/Pedidos?idPersonal=${idUsuario}&cantidad=${7}`;
     let result;
 
     if(idUsuario == null){
-      enpoint = `${config.apiUrl}/api/Pedidos?cantidad=${4}`;
+      enpoint = `${config.apiUrl}/Pedidos?cantidad=${4}`;
     }
 
     const response = await fetch(enpoint);
@@ -71,12 +71,12 @@ const conseguirPedido = async (idPedido) => {
 
 const conseguirPedidosFiltrado = async (idUsuario,fechaInicio,fechaUltimo) => {
 
-  let enpoint = `${config.apiUrl}/api/Pedidos?idPersonal=${idUsuario}&Desde=${fechaInicio}&Hasta=${fechaUltimo}`;
+  let enpoint = `${config.apiUrl}/Pedidos?idPersonal=${idUsuario}&Desde=${fechaInicio}&Hasta=${fechaUltimo}`;
   let result;
 
   if(idUsuario == null){
 
-    enpoint = `${config.apiUrl}/api/Pedidos?Desde=${fechaInicio}&Hasta=${fechaUltimo}`;
+    enpoint = `${config.apiUrl}/Pedidos?Desde=${fechaInicio}&Hasta=${fechaUltimo}`;
   }
 
   const response = await fetch(enpoint);
