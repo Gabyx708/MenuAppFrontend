@@ -1,5 +1,5 @@
-let api_host = "localhost"
-let api_port = "7135"
+let api_host = "/api.menu.tecnaingeieria.com"
+let api_port = "7008"
 let api_version =  `v1.2`
 
 const config = {

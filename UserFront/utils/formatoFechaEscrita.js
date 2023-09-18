@@ -16,7 +16,7 @@ export default function formatoFechaEscrita(date,time) {
     let diaMes = fecha.getDate();
     let month = fecha.getMonth();
     let year = fecha.getFullYear()
-
+console.log(fecha)
     let hora = fecha.getHours();
     let minutos = fecha.getMinutes();
 
