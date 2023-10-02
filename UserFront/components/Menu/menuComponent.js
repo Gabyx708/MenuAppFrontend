@@ -7,6 +7,7 @@ export default function pintarMenu(menuData){
     <hr>
     <h4>PARA EL: ${formatoFechaEscrita(Date.parse(menuData.fecha_consumo),false)}</h4>
     <h4>CIERRA EL: ${formatoFechaEscrita(Date.parse(menuData.fecha_cierre),true)}</h4>
+    <button id="btn_more" menu=${menuData.id}>VER MAS</button>
     </div>`;
     
 } 

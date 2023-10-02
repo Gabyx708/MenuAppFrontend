@@ -2,3 +2,19 @@
     display: block;
     color: var(--color-header);
 }
+
+#btn_more{
+    border: 2px solid var(--color-header);
+    font-weight: bold;
+    background-color: var(--color-header);
+    color: white;
+    padding: 1%;
+    margin-top: 0.3em;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+#btn_more:hover{
+    color:  var(--color-header);
+    background-color: white;
+}

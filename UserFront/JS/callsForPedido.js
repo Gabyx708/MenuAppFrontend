@@ -13,7 +13,12 @@ sessionStorage.setItem("pedidoHecho",JSON.stringify(ultimoPedido));
 const pedidoDeHoy = await JSON.parse(sessionStorage.getItem("pedidoHecho"))[0];
 
 await platillo.pintarOpciones();
-MenuComponent.menuComponente();
+await MenuComponent.menuComponente();
+
+/*ver el detalle del menu */
+const btn_more = document.getElementById("btn_more");
+btn_more.addEventListener("click",()=> location.href = "./menu.html")
+
 
 const menuReciente = JSON.parse(sessionStorage.getItem("menu"));
 console.log(menuReciente.fecha_cierre)
