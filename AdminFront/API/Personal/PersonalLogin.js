@@ -17,12 +17,33 @@ const loguearUsuario = async (UsuarioLoginRequest) => {
       }
   
       if(response.ok){
-        let userData = await response.json();
-        sessionStorage.setItem("user", JSON.stringify(userData));
+        let responsePayload = await response.json();
+        let userData = responsePayload
+        saveToken(userData.token)
+        await getUserData(userData.id,userData.token)
       }
   
       return response;
 };
+
+
+const getUserData = async (id,token) => {
+
+  const endpointUsuario = `${config.apiUrl}/Personal/${id}`;
+
+  const response = await fetch(endpointUsuario, {
+    headers: { "Authorization": `Bearer ${token}` },
+  });
+  
+
+  if(response.ok){
+    let data = await response.json();
+     sessionStorage.setItem("user",JSON.stringify(data));
+     return data;
+  }
+    
+  return response;
+}
 
 export const Login = {
 
