@@ -1,4 +1,7 @@
 import config from "../../config/config.js";
+import { getToken } from "../../JS/services/autenticationService.js";
+
+const token = getToken();
 
 const endpointAutomatizar =  `${config.apiUrl}/Personal/automation`;
 
@@ -8,6 +11,7 @@ const automatizarPedido = async (automationRequest) => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(automationRequest),
       });

@@ -1,4 +1,6 @@
 import config from "../../config/config.js";
+import { saveToken } from "../../JS/services/autenticationService.js";
+import { getToken } from "../../JS/services/autenticationService.js";
 
 const endpointLogin =  `${config.apiUrl}/Personal/login`;
 
@@ -11,16 +13,18 @@ const loguearUsuario = async (UsuarioLoginRequest) => {
         },
         body: JSON.stringify(UsuarioLoginRequest),
       });
-  
+
       if (!response.ok) {
         return response;
       }
-  
+
       if(response.ok){
-        let userData = await response.json();
-        sessionStorage.setItem("user", JSON.stringify(userData));
+        let responsePayload = await response.json();
+        let userData = responsePayload
+        saveToken(userData.token)
+        await getUserData(userData.id,userData.token)
       }
-  
+
       return response;
 };
 
@@ -32,6 +36,7 @@ const changePassword = async (id,PersonalPaswordRequest) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
     },
     body: JSON.stringify(PersonalPaswordRequest),
   });
@@ -39,6 +44,25 @@ const changePassword = async (id,PersonalPaswordRequest) => {
   return response;
 
 }
+
+const getUserData = async (id,token) => {
+
+  const endpointUsuario = `${config.apiUrl}/Personal/${id}`;
+
+  const response = await fetch(endpointUsuario, {
+    headers: { "Authorization": `Bearer ${token}` },
+  });
+  
+
+  if(response.ok){
+    let data = await response.json();
+     sessionStorage.setItem("user",JSON.stringify(data));
+     return data;
+  }
+    
+  return response;
+}
+
 
 export const Login = {
 

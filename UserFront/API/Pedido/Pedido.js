@@ -1,4 +1,7 @@
 import config from "../../config/config.js";
+import { getToken } from "../../JS/services/autenticationService.js";
+
+const token = getToken();
 
 const enpointPedido =  `${config.apiUrl}/Pedido`;
 
@@ -8,6 +11,7 @@ const hacerUnPedido = async (pedidoRequest) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(pedidoRequest),
       });
@@ -32,7 +36,9 @@ const conseguirUltimo = async (idUsuario) => {
     let cantPedidos = 7
     let enpoint = `${enpointPedido}s?idPersonal=${idUsuario}&cantidad=${cantPedidos}`;
     let result;
-    const response = await fetch(enpoint);
+    const response = await fetch(enpoint,{
+      headers : {"Authorization": `Bearer ${token}`}
+    });
     
     if (!response.ok) {
       throw new Error();
@@ -50,7 +56,10 @@ const conseguirPedido = async (idPedido) => {
 
   let enpoint = enpointPedido+"/"+idPedido;
   let result;
-  const response = await fetch(enpoint);
+
+  const response = await fetch(enpoint,{
+    headers : {"Authorization": `Bearer ${token}`}
+  });
   
   if (!response.ok) {
     return response;
@@ -70,7 +79,11 @@ const borrarPedido = async (id) =>{
   const enpointEliminar = enpointPedido+"/"+id;
 
   const response = await fetch(enpointEliminar, {
-    method: "DELETE"});
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    }});
 
     if (!response.ok) {
       return response;
@@ -89,7 +102,10 @@ const ultimoPedido = async () => {
   let idUsuario = JSON.parse(sessionStorage.getItem("user")).id;
   let enpoint = `${enpointPedido}s?idPersonal=${idUsuario}&cantidad=${1}`;
   let result;
-  const response = await fetch(enpoint);
+
+  const response = await fetch(enpoint,{
+    headers : {"Authorization": `Bearer ${token}`}
+  });
   
   if (!response.ok) {
     throw new Error();
