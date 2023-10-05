@@ -1,12 +1,17 @@
 import config from "../../config/config.js";
 import formatoFecha from "../../utils/formatoFecha.js";
+import { getToken } from "../../js/services/autenticationService.js";
 
+const token = getToken();
 const enpointMenuFecha =  `${config.apiUrl}/Menu/fecha`;
 const enpointMenu = `${config.apiUrl}/Menu`;
 
 const conseguirSiguienteMenu = async () => {
 
-    const response = await fetch(enpointMenu);
+    const response = await fetch(enpointMenu,{
+      headers : {"Authorization": `Bearer ${token}`}
+    });
+
     let result;
     if (!response.ok) {
       throw new Error();
@@ -25,6 +30,7 @@ const crearMenu = async (menuRequest) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
     },
     body: JSON.stringify(menuRequest),
   });

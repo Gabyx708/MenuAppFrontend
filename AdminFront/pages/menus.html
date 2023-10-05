@@ -21,7 +21,7 @@
       <div class="form_menu">
         <form>
           <div class="header-form">
-            <h3>crear un nuevo menu</h3>
+            <h3>CREACION DE MENU</h3>
             <img src="/assets/images/bolsa.png" alt="">
           </div>
 
@@ -44,7 +44,7 @@
           </div>
 
           <div class="column">
-            <h4>opciones del menu</h4>
+            <h4>OPCIONES DEL MENU</h4>
             <div class="contenedor-opcion">
               <select class="opciones-select form-select form-select-lg mb-3" aria-label=".form-select-lg example">
 
@@ -77,7 +77,7 @@
           <hr>
 
 
-          <button type="submit" class="boton_carga">cargar</button>
+          <button type="submit" class="boton_carga">CREAR</button>
         </form>
       </div>
 
@@ -85,41 +85,38 @@
       <div class="form_menu info">
         <form>
           <div class="header-form">
-            <h3>ultimo menu cargado</h3>
+            <h3>ULTIMO MENU CREADO</h3>
             <img src="/assets/images/bolsa.png" alt="">
           </div>
 
           <hr>
           <br>
-          <h3  id="codigo_menu" class="text-black sombra" style="text-align: center;">ID: </h3>
           <div class="column">
-
-            <div class="fechas">
-              <div class="fecha_d forma-redondeada sombra">
-                <label for="">FECHA CONSUMO:</label>
-                <p  class="text-black" id="date_consumo_print"></p>
-              </div>
-
-              <div class="fecha_d forma-redondeada sombra">
-                <label for="">FECHA CREACION:</label>
-                <p class="text-black" id="date_carga_print"></p>
-              </div>
-        
-            </div>
-
-            <div class="fecha_d cierre forma-redondeada sombra">
-              <label for="">FECHA CIERRE:</label>
-              <p class=" text-black" id="date_venc_print"></p>
-            </div>
-            <hr>
-          </div>
+            <h4>ACERCA DE ESTE MENU</h4>
+            <table class="table" id="tabla_descripcion">
+              <thead>
+              <tr>
+                  <th><span>ID</span><p id="idDescrip"></p></th>
+                  <th><span>Fech. consumo</span><p id="fechConsuDescrip"></p></th>
+              </tr>
+              <tr>
+                  <th><span>Fech. carga</span><p id="fechaCargaDescrip"></p></th>
+                  <th><span>Fech. cierre</span><p id="fechaCierreDescrip"></p></th>
+              </tr>
+              </thead>
+          </table>
 
           <div class="column">
-            <h4>platillos del menu</h4>
-            <div class="contenedor-opcion" id="opciones_menu_dia">
-
-
-          </div>
+            <h4>OPCIONES DISPONIBLES</h4>
+            <table class="contenedor-opcion table" id="opciones_menu_dia">
+                <thead class="thead-opciones">
+                  <th>Descripcion</th>
+                  <th>pedidos</th>
+                  <th>quedan</th>
+                  <th>stock</th>
+                  <th>precio</th>
+                </thead>
+            </table>
         </form>
       </div>
 

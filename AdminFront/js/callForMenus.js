@@ -134,26 +134,48 @@ Menu.crearMenu(menuRequest)
 let ultimoMenu = await Menu.GetSiguiente();
 
 
-let codigoMenu =  document.getElementById("codigo_menu");
-let fechaConsumir = document.getElementById("date_consumo_print");
-let fechaCarga = document.getElementById("date_carga_print");
-let fechaCierra = document.getElementById("date_venc_print");
+function renderTablaDescripcion(menu){
 
+    const id = document.getElementById("idDescrip");
+    const fechaConsumo = document.getElementById("fechConsuDescrip")
+    const fechaCarga = document.getElementById("fechaCargaDescrip")
+    const fechaCierre = document.getElementById("fechaCierreDescrip")
 
-fechaConsumir.innerText = formatoFechaEscrita(new Date(ultimoMenu.fecha_consumo));
-fechaCarga.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_carga),true);
-fechaCierra.innerText  = formatoFechaEscrita(new Date(ultimoMenu.fecha_cierre),true);
-codigoMenu.textContent = "ID: "+(ultimoMenu.id).toUpperCase();
+    id.innerHTML = menu.id
+    fechaConsumo.innerHTML = formatoFechaEscrita(menu.fecha_consumo)
+    fechaCarga.innerHTML = formatoFechaEscrita(menu.fecha_carga,true)
+    fechaCierre.innerHTML = formatoFechaEscrita(menu.fecha_cierre,true)
+}
 
+renderTablaDescripcion(ultimoMenu);
 
 let opcionesMenu = document.getElementById("opciones_menu_dia");
 let platos = await Array.from(ultimoMenu.platillos);
 
 platos.forEach(plato => {
 
-    let texto = document.createElement("p");
-    texto.textContent = plato.descripcion +" || quedan: "+(plato.stock-plato.pedido)+"  pedidos: "+plato.pedido;
-    opcionesMenu.appendChild(texto);
+
+    let fila = document.createElement("tr");
+    opcionesMenu.appendChild(fila);
+
+    let descripcion = document.createElement("td");
+    let pedidos = document.createElement("td");
+    let quedan = document.createElement("td");
+    let total = document.createElement("td");
+    let precio = document.createElement("td");
+
+    descripcion.textContent = plato.descripcion
+    pedidos.textContent = `${plato.pedido}`
+    quedan.textContent = `${plato.stock - plato.pedido}`
+    total.textContent = plato.stock
+    precio.textContent = "$ "+plato.precio
+
+    fila.appendChild(descripcion)
+    fila.appendChild(pedidos)
+    fila.appendChild(quedan)
+    fila.appendChild(total)
+    fila.appendChild(precio)
+
 })
 
 /*--LOGICA PARA SETEAR FECHAS POR DEFECTO--*/

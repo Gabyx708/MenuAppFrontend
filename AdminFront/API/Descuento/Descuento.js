@@ -1,5 +1,7 @@
 import config from "../../config/config.js";
+import { getToken } from "../../js/services/autenticationService.js";
 
+const token = getToken();
 const api = config.apiUrl;
 const enpointDescuento = `${api}/Descuento`;
 
@@ -10,6 +12,7 @@ const crearDescuento = async (descuentoRequest) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(menuRequest),
       });
@@ -30,7 +33,9 @@ const conseguirDescuentoVigente = async () => {
 
     let result;
 
-    const response = await fetch(enpointPlatillo);
+    const response = await fetch(enpointPlatillo,{
+      headers : {"Authorization": `Bearer ${token}`}
+    });
     
       if (!response.ok) {
         throw new Error();
