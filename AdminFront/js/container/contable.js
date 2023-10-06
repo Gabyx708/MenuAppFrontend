@@ -33,7 +33,7 @@ btnGastoDia.addEventListener("click", (e) => {
             } else {
                 localStorage.setItem("report_dia", JSON.stringify(response.result));
                 localStorage.setItem("tipo_reporte",JSON.stringify("dia"));
-                location.href = "/pages/report/report.html";
+                location.href = "/pages/report.html";;
             }
 
         }
@@ -82,7 +82,7 @@ btnGastoPeriodo.addEventListener("click", async (e) => {
                 } else {
                     localStorage.setItem("report_dia", JSON.stringify(response.result));
                     localStorage.setItem("tipo_reporte", JSON.stringify("periodo"));
-                    location.href = "/pages/report/report.html";
+                    location.href = "/pages/report.html";;
                 }
             } catch (error) {
                 Swal.close(); // Cerrar la animación de carga en caso de error
@@ -143,7 +143,7 @@ btnGastoEmpleado.addEventListener("click",async (e) =>{
                 } else {
                     localStorage.setItem("report_dia", JSON.stringify(response.result));
                     localStorage.setItem("tipo_reporte", JSON.stringify("periodo_empleado"));
-                    location.href = "/pages/report/report.html";
+                    location.href = "/pages/report.html";
                 }
             } catch (error) {
                 Swal.close(); // Cerrar la animación de carga en caso de error

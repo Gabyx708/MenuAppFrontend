@@ -1,6 +1,6 @@
-import { navBar } from "../components/navBar/navBar.js";
-import platilloResume from "../components/platilloResume/platilloResume.js";
-import { Platillo } from "../API/Platillo/Platillo.js";
+import { navBar } from "../../components/navBar/navBar.js";
+import platilloResume from "../../components/platilloResume/platilloResume.js";
+import { Platillo } from "../../API/Platillo/Platillo.js";
 
 await platilloResume.pintarPlatillos();
 await navBar.getNavbar();

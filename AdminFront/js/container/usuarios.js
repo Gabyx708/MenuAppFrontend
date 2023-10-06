@@ -1,5 +1,5 @@
-import { navBar } from "../components/navBar/navBar.js";
-import { Personal } from "../API/Personal/Personal.js";
+import { navBar } from "../../components/navBar/navBar.js";
+import { Personal } from "../../API/Personal/Personal.js";
 
 await navBar.getNavbar();
 

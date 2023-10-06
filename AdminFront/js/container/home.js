@@ -1,12 +1,12 @@
-import { Costos } from "../API/Costos/Costo.js";
-import { Menu } from "../API/Menu/Menu.js";
-import { navBar } from "../components/navBar/navBar.js";
-import pedidoResumen from "../components/pedidoResume/pedidoResume.js";
-import platillo from "../components/platillo/platillo.js";
-import cerrarSesion from "../utils/cerrarSesion.js";
-import formatoFecha from "../utils/formatoFecha.js";
-import formatoFechaEscrita from "../utils/formatoFechaEscrita.js";
-import { Pedido } from "../API/Pedido/Pedido.js";
+import { Costos } from "../../API/Costos/Costo.js";
+import { Menu } from "../../API/Menu/Menu.js";
+import { navBar } from "../../components/navBar/navBar.js";
+import pedidoResumen from "../../components/pedidoResume/pedidoResume.js";
+import platillo from "../../components/platillo/platillo.js";
+import cerrarSesion from "../../utils/cerrarSesion.js";
+import formatoFecha from "../../utils/formatoFecha.js";
+import formatoFechaEscrita from "../../utils/formatoFechaEscrita.js";
+import { Pedido } from "../../API/Pedido/Pedido.js";
 
 await pedidoResumen.pintarPedidos();
 await navBar.getNavbar(); 
@@ -54,8 +54,8 @@ let divLabelPedidos = document.getElementById("label_pedidos");
 let divLabelCantidad = document.getElementById("label_cantidad");
 let fechaResultado = resultado.result.fecha;
 
-divLabelPedidos.textContent = `a pagar pedidos del : ${formatoFechaEscrita(fechaResultado)}`;
-divLabelCantidad.textContent =  `cantidad de pedidos del : ${formatoFechaEscrita(fechaResultado)}`;
+divLabelPedidos.textContent = `PEDIDOS DEL: ${formatoFechaEscrita(fechaResultado)}`;
+divLabelCantidad.textContent =  `TOTAL PEDIDOS DEL: ${formatoFechaEscrita(fechaResultado)}`;
 
 /*-- logica para mostrar info del menu --*/
 let menu = await Menu.GetSiguiente();

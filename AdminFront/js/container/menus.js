@@ -1,8 +1,8 @@
-import { navBar } from "../components/navBar/navBar.js";
-import { Platillo } from "../API/Platillo/Platillo.js";
-import {Menu} from "../API/Menu/Menu.js"
-import formatoFecha from "../utils/formatoFecha.js";
-import formatoFechaEscrita from "../utils/formatoFechaEscrita.js";
+import { navBar } from "../../components/navBar/navBar.js";
+import { Platillo } from "../../API/Platillo/Platillo.js";
+import {Menu} from "../../API/Menu/Menu.js"
+import formatoFecha from "../../utils/formatoFecha.js";
+import formatoFechaEscrita from "../../utils/formatoFechaEscrita.js";
 
 navBar.getNavbar();
 
@@ -98,7 +98,9 @@ function crearMenu(){
    // Mostrar la animación de carga antes de hacer la solicitud
 Swal.fire({
     title: 'creando menu , aguarda...',
+    text: "(espera hasta que terminemos)",
     allowOutsideClick: false, // Evita que el usuario cierre la alerta
+    showConfirmButton: false,
     onBeforeOpen: () => {
         Swal.showLoading();
     }
@@ -178,25 +180,3 @@ platos.forEach(plato => {
 
 })
 
-/*--LOGICA PARA SETEAR FECHAS POR DEFECTO--*/
-
-// Obtén el elemento de input por su ID
-const dateInput = document.getElementById("date_venc");
-
-// Crea una nueva instancia de Date para obtener la fecha y hora actuales
-const now = new Date();
-
-// Establece la fecha actual
-const year = now.getFullYear();
-const month = (now.getMonth() + 1).toString().padStart(2, '0'); // El mes se indexa desde 0, así que sumamos 1
-const day = now.getDate().toString().padStart(2, '0');
-
-// Establece la hora en 17:00
-const hour = '17';
-const minute = '00';
-
-// Formatea la fecha y hora en el formato requerido (AAAA-MM-DDTHH:mm)
-const defaultValue = `${year}-${month}-${day}T${hour}:${minute}`;
-
-// Establece el valor del campo datetime-local
-dateInput.value = defaultValue;
