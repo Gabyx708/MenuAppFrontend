@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/menus.css">
+    <link rel="stylesheet" href="/css/pedido.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Pedido</title>
+</head>
+<body>
+    <div class="container-principal">
+
+        <section>
+            <h2>GENERAR UN PEDIDO MANUALMENTE</h2>
+
+            <label for="">PERSONA: </label>
+            <select name="opciones_persona" id="opciones_persona"></select>
+
+            <article>
+                <button id="btnAgregar">agregar otra opcion (+)</button>
+                <button id="btnEliminar">eliminar ultima opcion (-)</button>
+                <button id="btnHacerPedido">confirmar pedido</button>
+                <div>
+
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+<script type="module" src="/js/container/pedido.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.js"></script>
+</html>

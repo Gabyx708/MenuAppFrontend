@@ -1,0 +1,27 @@
+section{
+    border: 5px solid var(--color-acento);
+    border-radius: 20px;
+    background-color: white;
+    padding: 8%;
+    width: 95%;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+}
+
+button{
+    background-color: var(--color-header);
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 2%;
+    font-weight: bold;
+}
+
+#btnHacerPedido{background-color: green;}
+
+article div label ,
+article div select{
+    padding: 0.5%;
+    margin: 0.3em;
+}
