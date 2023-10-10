@@ -2,7 +2,7 @@ section{
     border: 5px solid var(--color-acento);
     border-radius: 20px;
     background-color: white;
-    padding: 8%;
+    padding: 2%;
     width: 95%;
     float: right;
     text-align: center;
@@ -12,10 +12,20 @@ section{
 button{
     background-color: var(--color-header);
     color: white;
-    border-radius: 10px;
+    border-radius: 10px !important;
+    border: none;
     padding: 1%;
     margin: 2%;
     font-weight: bold;
+}
+
+.btn_container{
+    margin: 1%;
+}
+
+#opciones_persona{
+    padding: 1%;
+    margin: 1%;
 }
 
 #btnHacerPedido{background-color: green;}

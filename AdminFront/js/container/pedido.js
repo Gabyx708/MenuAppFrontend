@@ -3,6 +3,7 @@ import {Menu} from "../../API/Menu/Menu.js";
 import {saveMenu} from "../services/menuService.js";
 import {Personal} from "../../API/Personal/Personal.js";
 import { Pedido } from "../../API/Pedido/Pedido.js";
+import { alertaProblema } from "../../utils/alertas.js";
 
 await navBar.getNavbar();
 
@@ -20,7 +21,7 @@ const btnConfirmarPedido = document.getElementById("btnHacerPedido")
 
 btnAgregarOpcion.addEventListener("click",() => {agregarOpcion()})
 btnQuitarOpcion.addEventListener("click",()=> {eliminarUltimaOpcion()})
-btnConfirmarPedido.addEventListener("click",()=> {confirmarPedido()})
+btnConfirmarPedido.addEventListener("click",()=> {chequearConfirmacionPedido()})
 
     function agregarOpcion() {
         
@@ -80,6 +81,31 @@ btnConfirmarPedido.addEventListener("click",()=> {confirmarPedido()})
             menuPlatillos : listaIdOpciones
         }
         
-        Pedido.hacerUnPedido(pedidoRequest)
+        Pedido.hacerUnPedido(pedidoRequest,alertaProblema)
       }
+
+    function chequearConfirmacionPedido(){
+
+        Swal.fire({
+            title: 'estas seguro de agregar este pedido?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'si',
+            cancelButtonText: "no"
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                confirmarPedido();
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'pedido creado',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            }
+          })
+    }
 

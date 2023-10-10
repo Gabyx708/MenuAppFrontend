@@ -5,7 +5,7 @@ const token = getToken();
 
 const enpointPedido =  `${config.apiUrl}/Pedido`;
 
-const hacerUnPedido = async (pedidoRequest) => {
+const hacerUnPedido = async (pedidoRequest,errorcallback) => {
 
     const response = await fetch(enpointPedido, {
         method: "POST",
@@ -19,6 +19,7 @@ const hacerUnPedido = async (pedidoRequest) => {
 
 
       if (!response.ok) {
+        errorcallback();
         return response;
       }
 
