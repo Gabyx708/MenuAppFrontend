@@ -37,6 +37,8 @@ export default async function reciboComponete(pedidoResponse) {
         <h4 class="descuento">Descuento: ${pedidoResponseObject.recibo.descuento}%</h4>
         <h4 class="total">Total: $${total}</h4>
       </div>
-    </div>`;
+    </div>
+    
+    <div id="badget-container"></div>`;
   }
   

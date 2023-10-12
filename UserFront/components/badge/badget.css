@@ -1,0 +1,28 @@
+#badget-container{
+    margin-top: 15px;
+    float: inline-end;
+}
+
+.badget_auth{
+    display: flex;
+    background-color: var(--green-dark);
+    width: 15rem;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    padding: 0.5%;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.badget_auth img{
+    margin-left: 10px;
+    padding: 0.3%;
+    width: 32px;
+    height: 32px;
+}
+
+.badget_auth span{
+    margin-left: 5px;
+}
