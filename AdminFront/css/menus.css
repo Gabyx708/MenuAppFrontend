@@ -138,6 +138,10 @@ button{
   justify-content: center;
 }
 
+#contendor_opciones_plato div label{
+  margin: 5px;
+}
+
 /*---estilos de la tarjeta que muestra el menu---*/
 
 .fecha_d{

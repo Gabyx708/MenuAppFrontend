@@ -9,12 +9,17 @@ await navBar.getNavbar();
 let platillos = await Platillo.Get();
 
 const btnAgregarOpcion = document.getElementById("btnAgregarOpcion");
-console.log(btnAgregarOpcion)
+const btnEliminarOpcion = document.getElementById("btnEliminarOpcion");
 let article = document.getElementById("contendor_opciones_plato")
 
 btnAgregarOpcion.addEventListener("click",(e)=> {
     e.preventDefault();
     agregarOpcionesAlMenu();
+})
+
+btnEliminarOpcion.addEventListener("click",(e)=> {
+    e.preventDefault();
+    eliminarUltimaOpcion();
 })
 /*logica del formulario de creacion de menu*/
 let $selects = [];
@@ -148,12 +153,14 @@ function agregarOpcionesAlMenu(){
         const label = document.createElement("label");
         label.textContent = "OPCION: ";
         const select = document.createElement("select");
-        select.classList.add("id_menu_plato")
+        select.classList.add("opcion_menu")
         select.name = "comida";
 
+        const labelNumber = document.createElement("label");
+        labelNumber.textContent = "STOCK: "
         const selectNumber = document.createElement("select");
         
-        for (let i = 0; i < 30; i++) {
+        for (let i = 1; i <= 30; i++) {
             let opcionNumber = document.createElement("option");
             opcionNumber.textContent = i;
             opcionNumber.value = i
@@ -171,10 +178,18 @@ function agregarOpcionesAlMenu(){
         
         div.appendChild(label);
         div.appendChild(select);
+
+        div.appendChild(labelNumber)
         div.appendChild(selectNumber)
         article.appendChild(div);
 }
 
+function eliminarUltimaOpcion() {
+    const divs = article.querySelectorAll("div");
+    if (divs.length > 1) {
+        article.removeChild(divs[divs.length - 1]);
+    }
+}
 
 
 /*logica para mostrar el utlimo menu */
