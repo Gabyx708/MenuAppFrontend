@@ -9,6 +9,15 @@ section{
     font-weight: bold;
 }
 
+.title_container{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.title_container img{
+    cursor: pointer;
+}
+
 button{
     background-color: var(--color-header);
     color: white;

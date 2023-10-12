@@ -18,10 +18,12 @@ const article = document.querySelector("article");
 const btnAgregarOpcion = document.getElementById("btnAgregar");
 const btnQuitarOpcion = document.getElementById("btnEliminar");
 const btnConfirmarPedido = document.getElementById("btnHacerPedido")
+const bntMostrarInfo = document.getElementById("img_info");
 
 btnAgregarOpcion.addEventListener("click",() => {agregarOpcion()})
 btnQuitarOpcion.addEventListener("click",()=> {eliminarUltimaOpcion()})
 btnConfirmarPedido.addEventListener("click",()=> {chequearConfirmacionPedido()})
+bntMostrarInfo.addEventListener("click",() => {mostrarInfo()})
 
     function agregarOpcion() {
         
@@ -61,7 +63,7 @@ btnConfirmarPedido.addEventListener("click",()=> {chequearConfirmacionPedido()})
         
         listaPersonal.forEach(persona => { 
             const option = document.createElement("option");
-            option.textContent = `${persona.nombre} / DNI:${persona.dni}`
+            option.textContent = `${persona.nombre} ${persona.apellido} --/ DNI:${persona.dni}`
             option.value = `${persona.id}`
             select.appendChild(option)
         })
@@ -107,5 +109,13 @@ btnConfirmarPedido.addEventListener("click",()=> {chequearConfirmacionPedido()})
             })
             }
           })
+    }
+
+    function mostrarInfo(){
+
+        Swal.fire({
+            icon: "info",
+            text: " el generador de pedidos puede generar pedidos para cualquier usuario con una unica condicion NO PUEDE HABER 2 VECES EL MISMO PLATO EN UN PEDIDO"
+        })
     }
 

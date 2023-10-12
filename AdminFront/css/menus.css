@@ -121,6 +121,22 @@ hr{
   color: var(--color-header);
 }
 
+button{
+  background-color: var(--color-header);
+  color: white;
+  border-radius: 10px !important;
+  margin: 10px !important;
+  border: none;
+  padding: 2%;
+  font-weight: bold;
+}
+
+.btn_container{
+  display: inline-flex;
+  width: 100%;
+  margin: 1%;
+  justify-content: center;
+}
 
 /*---estilos de la tarjeta que muestra el menu---*/
 

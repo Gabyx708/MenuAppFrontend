@@ -4,14 +4,23 @@ import {Menu} from "../../API/Menu/Menu.js"
 import formatoFecha from "../../utils/formatoFecha.js";
 import formatoFechaEscrita from "../../utils/formatoFechaEscrita.js";
 
-navBar.getNavbar();
+await navBar.getNavbar();
 
+let platillos = await Platillo.Get();
 
+const btnAgregarOpcion = document.getElementById("btnAgregarOpcion");
+console.log(btnAgregarOpcion)
+let article = document.getElementById("contendor_opciones_plato")
+
+btnAgregarOpcion.addEventListener("click",(e)=> {
+    e.preventDefault();
+    agregarOpcionesAlMenu();
+})
 /*logica del formulario de creacion de menu*/
 let $selects = [];
 let $stock = [];
-let platillos = await Platillo.Get();
-let btnCrearMenu = document.getElementsByTagName("button")[0];
+
+let btnCrearMenu = document.getElementsByTagName("x")[0];
 
 $selects = document.getElementsByClassName('opciones-select');
 $stock = document.getElementsByName('stock');
@@ -24,26 +33,26 @@ for (let i = 0; i < $selects.length; i++) {
 
 
 /*logica del boton de crear menu */
-btnCrearMenu.addEventListener("click",(e) =>{
-    e.preventDefault();
+// btnCrearMenu.addEventListener("click",(e) =>{
+//     e.preventDefault();
   
-    Swal.fire({
-        title: 'estas seguro de cargar este menu?',
-        text: "esta operacion es irreversible",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'confirmar',
-        cancelButtonText: "cancelar"
-      }).then((result) => {
-        if (result.isConfirmed) {
-                crearMenu();
-        }
-      })
+//     Swal.fire({
+//         title: 'estas seguro de cargar este menu?',
+//         text: "esta operacion es irreversible",
+//         icon: 'warning',
+//         showCancelButton: true,
+//         confirmButtonColor: '#3085d6',
+//         cancelButtonColor: '#d33',
+//         confirmButtonText: 'confirmar',
+//         cancelButtonText: "cancelar"
+//       }).then((result) => {
+//         if (result.isConfirmed) {
+//                 crearMenu();
+//         }
+//       })
   
   
-     } );
+//      } );
 
 
 
@@ -127,6 +136,43 @@ Menu.crearMenu(menuRequest)
     });
 
 
+}
+
+function agregarOpcionesAlMenu(){
+    
+
+    let listaPlatos = platillos.result;
+    listaPlatos.sort((a, b) => a.descripcion.localeCompare(b.descripcion));
+
+    const div = document.createElement("div");
+        const label = document.createElement("label");
+        label.textContent = "OPCION: ";
+        const select = document.createElement("select");
+        select.classList.add("id_menu_plato")
+        select.name = "comida";
+
+        const selectNumber = document.createElement("select");
+        
+        for (let i = 0; i < 30; i++) {
+            let opcionNumber = document.createElement("option");
+            opcionNumber.textContent = i;
+            opcionNumber.value = i
+            selectNumber.appendChild(opcionNumber)
+        }
+
+        
+        listaPlatos.forEach(platillo => {
+            const option = document.createElement("option");
+            option.value = platillo.idMenuPlato;
+            option.textContent = platillo.descripcion+" $"+platillo.precio;
+            select.appendChild(option);
+        })
+
+        
+        div.appendChild(label);
+        div.appendChild(select);
+        div.appendChild(selectNumber)
+        article.appendChild(div);
 }
 
 
