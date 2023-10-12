@@ -25,10 +25,10 @@ btnEliminarOpcion.addEventListener("click",(e)=> {
 let $selects = [];
 let $stock = [];
 
-let btnCrearMenu = document.getElementsByTagName("x")[0];
+let btnCrearMenu = document.getElementById("btnCrearMenu");
 
-$selects = document.getElementsByClassName('opciones-select');
-$stock = document.getElementsByName('stock');
+$selects = document.getElementsByClassName('opcion_menu');
+
 const formularioContainer = document.getElementById("form-container");
 
 for (let i = 0; i < $selects.length; i++) {
@@ -38,26 +38,26 @@ for (let i = 0; i < $selects.length; i++) {
 
 
 /*logica del boton de crear menu */
-// btnCrearMenu.addEventListener("click",(e) =>{
-//     e.preventDefault();
+btnCrearMenu.addEventListener("click",(e) =>{
+     e.preventDefault();
   
-//     Swal.fire({
-//         title: 'estas seguro de cargar este menu?',
-//         text: "esta operacion es irreversible",
-//         icon: 'warning',
-//         showCancelButton: true,
-//         confirmButtonColor: '#3085d6',
-//         cancelButtonColor: '#d33',
-//         confirmButtonText: 'confirmar',
-//         cancelButtonText: "cancelar"
-//       }).then((result) => {
-//         if (result.isConfirmed) {
-//                 crearMenu();
-//         }
-//       })
+     Swal.fire({
+         title: 'estas seguro de cargar este menu?',
+         text: "esta operacion es irreversible",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#3085d6',
+         cancelButtonColor: '#d33',
+         confirmButtonText: 'confirmar',
+         cancelButtonText: "cancelar"
+       }).then((result) => {
+         if (result.isConfirmed) {
+                 crearMenu();
+         }
+      })
   
   
-//      } );
+     } );
 
 
 
@@ -71,20 +71,19 @@ function agregarOciones(select){
     listaPlatos.forEach(plato => {
         const label = document.createElement("label");
         const option = document.createElement('option');
-        const valor = plato.id;
-        option.value = valor;
         option.text = ` ${plato.descripcion}`;
-
+        option.value = ` ${plato.descripcion}`;
         label.textContent =  ` ($${plato.precio})`;
         select.appendChild(option);
         option.appendChild(label);
-
+        //TODO arreglar atributo value
     });
 }
 
 
 function crearMenu(){
 
+    $stock = document.getElementsByClassName('stock');
     let fechaConsumo = document.getElementById("date_consumo").value;
     let fechaVencimiento = document.getElementById("date_venc").value;
     let menuPlatillos = [];
@@ -108,8 +107,9 @@ function crearMenu(){
         platillosDelMenu : menuPlatillos
     }
 
+    console.log(menuRequest)
 
-   // Mostrar la animación de carga antes de hacer la solicitud
+ /*  // Mostrar la animación de carga antes de hacer la solicitud
 Swal.fire({
     title: 'creando menu , aguarda...',
     text: "(espera hasta que terminemos)",
@@ -140,7 +140,7 @@ Menu.crearMenu(menuRequest)
         }
     });
 
-
+*/
 }
 
 function agregarOpcionesAlMenu(){
@@ -159,6 +159,7 @@ function agregarOpcionesAlMenu(){
         const labelNumber = document.createElement("label");
         labelNumber.textContent = "STOCK: "
         const selectNumber = document.createElement("select");
+        selectNumber.classList.add("stock");
         
         for (let i = 1; i <= 30; i++) {
             let opcionNumber = document.createElement("option");
