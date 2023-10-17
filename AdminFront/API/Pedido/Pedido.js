@@ -19,7 +19,7 @@ const hacerUnPedido = async (pedidoRequest,errorcallback) => {
 
 
       if (!response.ok) {
-        errorcallback();
+        errorcallback(response);
         return response;
       }
 

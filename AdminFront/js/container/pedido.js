@@ -57,10 +57,16 @@ bntMostrarInfo.addEventListener("click",() => {mostrarInfo()})
 
     function agregarOpcionDePersonal(){
         let listaPersonal = Array.from(empleados.result)
+        listaPersonal = listaPersonal.filter(empleado => empleado.nombre !== "BOT"); //elimina al bot de la lista de empleados
+        listaPersonal = listaPersonal.filter(empleado => empleado.nombre !== "Administrador"); //elimina a aker de la lista
+
+        listaPersonal.sort((a, b) => {
+            return a.nombre.localeCompare(b.nombre); //ordena segun nombre
+          });
+
+          
         const select = document.getElementById("opciones_persona");
 
-        const option = document.createElement("option");
-        
         listaPersonal.forEach(persona => { 
             const option = document.createElement("option");
             option.textContent = `${persona.nombre} ${persona.apellido} --/ DNI:${persona.dni}`

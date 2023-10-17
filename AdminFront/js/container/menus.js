@@ -72,12 +72,12 @@ function agregarOciones(select){
         const label = document.createElement("label");
         const option = document.createElement('option');
         option.text = ` ${plato.descripcion}`;
-        option.value = ` ${plato.descripcion}`;
         label.textContent =  ` ($${plato.precio})`;
         select.appendChild(option);
         option.appendChild(label);
         //TODO arreglar atributo value
     });
+
 }
 
 
@@ -107,9 +107,9 @@ function crearMenu(){
         platillosDelMenu : menuPlatillos
     }
 
-    console.log(menuRequest)
 
- /*  // Mostrar la animación de carga antes de hacer la solicitud
+
+  // Mostrar la animación de carga antes de hacer la solicitud
 Swal.fire({
     title: 'creando menu , aguarda...',
     text: "(espera hasta que terminemos)",
@@ -140,7 +140,7 @@ Menu.crearMenu(menuRequest)
         }
     });
 
-*/
+
 }
 
 function agregarOpcionesAlMenu(){
@@ -171,7 +171,7 @@ function agregarOpcionesAlMenu(){
         
         listaPlatos.forEach(platillo => {
             const option = document.createElement("option");
-            option.value = platillo.idMenuPlato;
+            option.value = platillo.id;
             option.textContent = platillo.descripcion+" $"+platillo.precio;
             select.appendChild(option);
         })
