@@ -1,4 +1,4 @@
-let api_host = "localhost"
+let api_host = "/menu.tecnaingenieria.com"
 let api_port = "7008"
 let api_version =  `v1.3`
 
