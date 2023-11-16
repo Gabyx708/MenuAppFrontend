@@ -30,7 +30,7 @@ header{
 }
 
 .header-container ul li:hover{
-    background-color: #0f3d5f;
+    background-color:  var(--green-light)/*#0f3d5f; */
 }
 
 .header-container ul li a img{

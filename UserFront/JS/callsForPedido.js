@@ -5,6 +5,7 @@ import { botonArrepentimiento } from "../components/botonArrepentimiento/botonAr
 import platillo from "../components/platillo/platillo.js";
 import { closeTarjeta } from "../components/closeCard/closeCard.js";
 import fraseRandom from "../utils/fraseRandom.js";
+import fraseRandomNavidad from "../utils/frasesRandonNavidad.js";
 
 
 const ultimoPedido = await Pedido.ultimoPedido();
@@ -39,7 +40,7 @@ if (fechaCierreMenu < fechaHoraAhora) {
     closeTarjeta.pintarCloseCard();
 
     const fraseSarcastica = document.getElementById("frase_sarcastica");
-    fraseSarcastica.textContent = fraseRandom();
+    fraseSarcastica.textContent = fraseRandomNavidad();
 
 } else {
 
