@@ -36,8 +36,8 @@ if(pedidoDeHoy != null){
 
 if (fechaCierreMenu < fechaHoraAhora) {
 
-    ocultarOpcionesMenu();
-    closeTarjeta.pintarCloseCard();
+    //ocultarOpcionesMenu();
+    //closeTarjeta.pintarCloseCard();
 
     const fraseSarcastica = document.getElementById("frase_sarcastica");
     fraseSarcastica.textContent = fraseRandomNavidad();
@@ -46,7 +46,7 @@ if (fechaCierreMenu < fechaHoraAhora) {
 
     if (diaDeHoy === diaPedido) {
 
-        ocultarOpcionesMenu();
+        //ocultarOpcionesMenu();
         botonArrepentimiento.pintarArrepentimientoCard();
     }
 
