@@ -1,10 +1,26 @@
 import { navBar } from "../../components/navBar/navBar.js";
 import platilloResume from "../../components/platilloResume/platilloResume.js";
 import { Platillo } from "../../API/Platillo/Platillo.js";
+import { Categoria } from "../../API/Automation/Categoria.js";
 
 await platilloResume.pintarPlatillos();
 await navBar.getNavbar();
 
+const categorias = await Categoria.obtenerTodasLasCategorias();
+const listaCategorias = categorias.result;
+
+const selectCategorias = document.getElementById("select_categorias");
+
+//logica que pinta las categorias
+Array.from(listaCategorias).forEach((categoria) => {
+    
+    const option = document.createElement('option');
+        option.text = ` ${categoria.nombre}`;
+        option.style.backgroundColor = ` ${categoria.color}`;
+        option.style.fontWeight = "bolder";
+
+        selectCategorias.appendChild(option);
+})
 
 const btnCrearPlato = document.getElementById("btnCrearPlato");
 
@@ -14,12 +30,15 @@ btnCrearPlato.addEventListener("click", (e) =>{
 
     let descripcionPlato = document.getElementById("descripcion_plato").value;
     let precioPlato = document.getElementById("precio_plato").value;
+    let categoria = selectCategorias.value;
 
     const platilloRequest = {
         descripcion : descripcionPlato.toLowerCase(),
-        precio: precioPlato
+        precio: precioPlato,
+        categoria: categoria
     }
 
+    console.log(platilloRequest)
    
     Swal.fire({
         title: 'agregar este plato?',

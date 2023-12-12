@@ -25,7 +25,8 @@
  
 
   form .form-control,
-  .input-group-text{
+  .input-group-text,
+  select{
     font-size: 15pt;
   }
 
