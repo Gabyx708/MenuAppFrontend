@@ -4,9 +4,6 @@ export default function platilloResumeComponente(platoData){
 
     return `<div class="plato_item sombra" value=${platoData.id}>
     <p>${truncatedDescripcion}</p>
-    <p>$ ${platoData.precio}</p>
-    <button value="${platoData.id}">
-        editar
-    </button>
+    <h6>$ ${platoData.precio}</h6>
 </div>`
 }

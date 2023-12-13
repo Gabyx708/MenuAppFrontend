@@ -125,3 +125,58 @@ btnAlterar.addEventListener("click", async (e) => {
             }}
     });
 });
+
+
+/**--LOGICA PARA CREAR CATEGORIAS ---*/
+const btnCrearCategoria = document.getElementById("btn_categoria");
+
+
+btnCrearCategoria.addEventListener("click",(e) => {
+
+    e.preventDefault();
+    
+    const nombreCategoria = document.getElementById("nombre_categoria").value;
+    const colorCategoria = document.getElementById("color_categoria").value;
+    const descripcionCategoria = document.getElementById("descripcion_categoria").value;
+
+    const categoriaRequest = {
+        nombre: nombreCategoria,
+        descripcion: descripcionCategoria,
+        color: colorCategoria
+    }
+
+    Swal.fire({
+        title: '¿quieres agregar esta categoria?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar'
+    }).then(()=> {
+        
+        if(descripcionCategoria.lenght <= 2 || nombreCategoria <= 4)
+        {
+            Swal.fire("la descripcion o el nombre estan vacios")
+        }else{
+            
+            Categoria.crearUnaCategoria(categoriaRequest)
+            .then(resultado => {
+                if (resultado.response.ok) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Menú creado con éxito',
+                    }).then(() => {
+                        location.reload();
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '¡Ups! Intenta nuevamente',
+                        text: 'Revisa bien los datos del menú',
+                    });
+                }
+            });
+            
+        }
+    })
+})

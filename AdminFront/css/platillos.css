@@ -6,7 +6,7 @@
     display: grid;
     grid-gap: 30px;
     grid-template-areas: "lista nuevo nuevo"
-                         "lista precio precio";
+                         "lista precio categoria";
 }
 
 .container_platos_list{
@@ -29,6 +29,15 @@
     border-radius: 20px;
 }
 
+.plato_item{
+    transition: all 0.3s;
+}
+
+.plato_item:hover{
+    cursor: pointer;
+    scale: 0.9;
+}
+
 
 .container_platos_price{
     grid-area: precio;
@@ -39,6 +48,31 @@
     text-align: center;
 }
 
+.container_categoria{
+    grid-area: categoria;
+    border: 2px solid var(--color-acento);
+    padding: 5%;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.form_categoria_container{
+    width: 50%;
+    margin: auto;
+    display: inline-block;
+    padding: 2%;
+    font-weight: bolder;
+}
+
+.form_categoria_container .btn{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form_categoria_container div{
+    margin-top: 10px;
+}
 
 /*--estilos formulario--*/
 .container_platos_creator form{
@@ -77,7 +111,7 @@ label[for="precio"]{
 /*--lista de platillos scroll---*/
 
 #container_items_platillos{
-    height: 500px;
+    height: 80vh;
     overflow-y: scroll;
     width: 100%;
     padding: 2%;
