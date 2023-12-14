@@ -1,0 +1,106 @@
+main{
+    margin: auto;
+    width: 90%;
+    padding: 2%;
+    text-align: center;
+}
+
+#title{
+    padding: 0.5%;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 3px 6px, rgba(0, 0, 0, 0.4) 2px 3px 6px;
+}
+
+section{
+    width: 100%;
+    display: inline-flex;
+}
+
+.animation_container{
+    padding: 2%;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 3px 6px, rgba(0, 0, 0, 0.6) 2px 3px 6px;
+}
+
+.line{
+    margin: 10px;
+    background-color: black;
+    width: 5px;
+}
+
+#btn_suscribirse{
+    font-weight: bolder;
+    margin: auto;
+    width: 30vw;
+    padding: 2%;
+    background-color: var(--color-header);
+    border-radius: 20px;
+    border: none;
+    font-size: 15pt;
+    color: white;
+
+    margin-top: 40px;
+    transition: all 0.3s;
+}
+
+#btn_suscribirse:hover{
+    background-color: white;
+    color: var(--color-header);
+    border: 3px dotted #000;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.form_seccion{
+    padding: 2%;
+    margin: auto;
+    width: 90%;
+    border: 3px dotted #000;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #d9d9d9;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+form{
+    display: inline-flex;
+    margin-top: 30px;
+}
+
+label{
+    color: black;
+    font-size: 15pt;
+    font-weight: bolder;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+p{
+    font-size: 15pt;
+    margin: 5px;
+}
+
+input{
+    height: 30px;
+    width: 20rem;
+    border-radius: 5px;
+}
+
+.form_seccion >button{
+    font-weight: bolder;
+    background-color: var(--color-header);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 1%;
+    width: 90%;
+    transition: all 0.3s;
+}
+
+.form_seccion >button:hover{
+    background-color: white;
+    color: var(--color-header);
+    border: 3px dashed #000;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

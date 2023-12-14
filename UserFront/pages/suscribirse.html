@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/assets/icons/favicon.ico"/>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/suscribirse.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>suscribirse</title>
+</head>
+<body>
+
+    <header></header>
+
+    <main>
+        <header id="title">
+            <h2>!El servicio de automatizacion ya esta aqui!</h2>
+        </header>
+
+        <section class="animation_container">
+
+            <div>
+                <h5>PASO 1: SUSCRIBIRSE</h5>
+                <p>suscribete al servicio complentando los datos de usuario 
+                    para continuar con la configuracion
+                </p>
+                <video autoplay loop width="200px">
+                    <source src="/assets/animated/brazo-robot.webm" type="video/webm">
+                </video>
+            </div>
+            <div class="line"></div>
+            <div>
+                <h5>PASO 2: CONFIGURA</h5>
+                <p>luego de suscribirte puedes setear tus preferencias,
+                    el algoritmo usara estas preferencias para elegir comidas
+                    de acuerdo a tu gusto
+                </p>
+                <video autoplay loop width="200px">
+                    <source src="/assets/animated/algoritmo.webm" type="video/webm">
+                </video>
+            </div>
+                <div class="line"></div>
+            <div>
+                <h5>PASO 3: AUTOMATICO</h5>
+                <p>la proxima vez que un administrador cargue un nuevo menu
+                    el servicio hara un pedido en tu nombre
+                </p>
+                <video autoplay loop width="200px">
+                    <source src="/assets/animated/robot-rayo.webm" type="video/webm">
+                </video>
+            </div>
+
+        </section>
+
+        <section>
+            <button id="btn_suscribirse">SUSCRIBIRSE</button>
+        </section>
+        
+    </main>
+
+    <div class="form_seccion">
+        <h3>>>> SUSCRIPCION AL SERVICIO DE AUTOMATIZACION</h3>
+        <form action="" id="form_suscripcion">
+            <label for="">ID:</label>
+            <p id="id"></p>
+
+            <label for="">NOMBRE:</label>
+            <p id="nombre"></p>
+            
+            <label for="">APELLIDO:</label>
+            <p id="apellido"></p>
+
+            <label>MAIL:</label>
+            <input type="email" id="mail" placeholder="coloca tu mail aqui...">
+        </form>
+        <button id="btn_confirmar_suscripcion">
+            ACEPTAR
+        </button>
+    </div>
+
+    <footer></footer>
+</body>
+<script type="module" src="/JS/callsForHome.js"></script>
+<script type="module" src="/JS/container/suscribirse.js"></script>
+</html>

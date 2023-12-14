@@ -180,3 +180,9 @@ btnCrearCategoria.addEventListener("click",(e) => {
         }
     })
 })
+
+/**-- logica para alterar un plato--- */
+
+const platillosComponentes =  document.getElementsByClassName("plato_item");
+
+//TODO: terminar logica para editar
