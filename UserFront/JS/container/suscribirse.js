@@ -1,3 +1,5 @@
+import { crearUsuarioAutomation } from "../../API/Automation/Usuario.js";
+import alertaGenerica from "../../utils/sweetAlert.js";
 import isValidEmail from "../../utils/verificarMail.js";
 import { getUser } from "../services/usuarioServices.js";
 
@@ -19,7 +21,7 @@ btnSuscripcion.addEventListener("click",(e) => {
 let email = document.getElementById("mail").value;
     
     if(email.length <= 4){
-        alert("cacio")
+        alertaGenerica("error","Ups!","no olvides colocar el mail...")
         return
     }
 
@@ -27,5 +29,40 @@ let email = document.getElementById("mail").value;
     
     if(esValido){
         //crear usuario
+        const usuarioRequest = {
+            id: usuario.id,
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            email: email
+        }
+
+        crearUsuario(usuarioRequest);
+
+    }else{
+        alertaGenerica("error","Ups!","este mail no es valido")
     }
 })
+
+
+async function  crearUsuario(usuario){
+    const respuesta = await crearUsuarioAutomation(usuario)
+
+    if(respuesta.response.status == 201){
+
+            const resultado = await Swal.fire({
+                icon: "success",
+                title: "EXITO",
+                text: "suscripcion exitosa , revisa tu mail",
+              })
+
+              if(resultado.isConfirmed){
+                location.href = "/pages/automatico.html"
+              }
+    }
+
+    if(respuesta.response.status != 201){
+        const message = respuesta.result.message
+
+        alertaGenerica("error","ups! ocurrio un problema",message)
+    }
+}

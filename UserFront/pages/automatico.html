@@ -14,19 +14,31 @@
     
     <header></header>
 
-    <div class="card-container">
-
-        <div class="card-bot sombra">
-            <img src="../assets/images/robotOff.png" class="card-img" alt="menu" id="menu_bot_img">
-            <div class="card-body">
-              <h3 class="card-title">AUTOMATIZAR PEDIDO</h3>
-              <p class="card-text" id="label-bot-text">el bot esta dormido 😴😴😴</p>
-              <button class="btn bg-success text-white" id="btn-active">ACTIVAR</button>
-            </div>
+    <main>
+      <aside>
+        <div class="globo" id="globo">
+           pensando...
           </div>
+        <video id="robot" autoplay loop width="300px">
+          <source src="/assets/animated/robot-vaso.webm" type="video/webm">
+      </video>
+      </aside>
 
+      <section id="preferencias_user">
+        <h3 id="title_header">configurar preferencias <h6>(de mas importante a menos importante)</h6></h3>
+        <hr>
+        <select name="" id="" class="preferencias"><option>agregar...</option></select>
+        <select name="" id="" class="preferencias"><option>agregar...</option></select>
+        <select name="" id="" class="preferencias"><option>agregar...</option></select>
+        <select name="" id="" class="preferencias"><option>agregar...</option></select>
+        <select name="" id="" class="preferencias"><option>agregar...</option></select>
+      </section>
 
-    </div>
+      <div class="btn_container">
+        <button id="btn_reset">GUARDAR PREFERENCIAS</button>
+        <button id="btn_off">APAGAR</button>
+      </div>
+    </main>
 
     <footer></footer>
 </body>
