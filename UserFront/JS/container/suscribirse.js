@@ -45,9 +45,13 @@ let email = document.getElementById("mail").value;
 
 
 async function  crearUsuario(usuario){
+    
+    Swal.showLoading();
     const respuesta = await crearUsuarioAutomation(usuario)
 
     if(respuesta.response.status == 201){
+
+        Swal.close();
 
             const resultado = await Swal.fire({
                 icon: "success",

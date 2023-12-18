@@ -15,9 +15,10 @@ const automatizarPedido = async (automationRequest) => {
         },
         body: JSON.stringify(automationRequest),
       });
-  
+      
+      let result = await response.json();
 
-    return response;
+    return { response , result};
 }
 export  const Automatizacion = {
     automatizarPedido : automatizarPedido 

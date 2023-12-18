@@ -1,4 +1,4 @@
-import { Automatizacion } from "../../../API/Personal/PersonalPedidoAutomation.js";
+import {Automatizacion} from '../../API/Personal/PersonalPedidoAutomation.js '
 import { getCategorias } from "../../API/Automation/Categorias.js";
 import { borrarPreferencias, cambiarEstadoPreferencia, crearPreferenciasUsuario, getPreferenciasUsuario } from "../../API/Automation/Preferencias.js";
 import { getUsuarioAutomation } from "../../API/Automation/Usuario.js";
@@ -198,14 +198,21 @@ function cambiarEstadoAutomatizacion(){
     const btnOn = document.getElementById("btn_off")
     
     btnOn.addEventListener("click",async (e)=> {
-        
-         const res = await cambiarEstadoPreferencia(idUsuario)
+
+        Swal.showLoading();
+
+         const res = await Automatizacion.automatizarPedido({personalId: idUsuario , isAutomatico:true})
 
          if(res.response.status == 200)
-         {
+         {  
+            Swal.close();
+
             alertaGenerica("success","EXITO!","se cambio la configuracion")
             .then((res)=> {if(res.isConfirmed){ location.reload()}})
          }else{
+
+            Swal.close();
+
             alertaGenerica("error","UPS!","ocurrio un problema")
             .then((res)=> {if(res.isConfirmed){ location.reload()}})
          }
